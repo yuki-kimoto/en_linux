@@ -1,16 +1,16 @@
-<h2>Tera Termマクロでポート番号を指定する</h2>
+<h2> Specify the port number with Tera Term macro </ h2>
 
 
 
-　SSHの接続ポートはデフォルトで22番ですが、セキュリティを高めるために変更されることが多いですね。Tera Termマクロの中でポート番号を指定するには以下のようコロンを使います。
-
-<pre>
-<h3>ドメイン名(or IPアドレス):ポート番号</h3>
-5.34.206.140:49251
-</pre>
-
-　以下は設定例です。
+SSH connection port is 22 by default, but it is often changed to improve security. To specify the port number in the Tera Term macro, use a colon as shown below.
 
 <pre>
-connect '5.34.206.140:49251 /ssh /2 /auth=password /user=kimoto /passwd=henohenomoheji'
-</pre>
+<h3> Domain name (or IP address): Port number </ h3>
+5.34.206.140: 49251
+</ pre>
+
+The following is a setting example.
+
+<pre>
+connect '5.34.206.140: 49251 / ssh / 2 / auth = password / user = kimoto / passwd = henohenomoheji'
+</ pre>

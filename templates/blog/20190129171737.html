@@ -1,78 +1,76 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
-<h2>tarコマンド - ファイルのアーカイブ化と展開</h2>
+    </ li>
+  </ ul>
+</ div>
+<h2> tar command-file archiving and decompression </ h2>
 
-<strong>tar</strong>コマンドを使用すると、ディレクトリとそれ以下のファイルをひとつのファイルにまとめることができます。まとめたファイルをコピーしたりしても、内部の更新日時などの情報が維持されます。
+You can use the <strong> tar </ strong> command to combine a directory and the files below it into a single file. Even if you copy the combined files, the information such as the internal update date and time is maintained.
 
-<h3>tarファイルにアーカイブ化する</h3>
+<h3> Archive to tar file </ h3>
 
-ディレクトリ以下の内容をtarファイルに、アーカイブ化するには、tarコマンドの「cf」オプションを使用します。(カレントディレクトリに、projectというディレクトリがあるとします。)
+To archive the contents under the directory into a tar file, use the "cf" option of the tar command. (Suppose there is a directory called project in the current directory.)
 
 <pre>
 tar cf project.tar project
-</pre>
+</ pre>
 
-　cはcreateという意味でアーカイブを作成するという意味です。fはファイルという意味で、ファイルやディレクトリが対象の場合に指定します。第一引数はアーカイブしたあとのファイル名です。project.tarのようにします。第二引数は、対象のディレクトリです。アーカイブは日本語で書庫と呼ばれたりします。
+C means to create an archive. f means a file, and is specified when a file or directory is the target. The first argument is the file name after archiving. It should look like project.tar. The second argument is the target directory. Archives are sometimes called library stacks in Japanese.
 
-<h3>tarファイルを展開する</h3>
+<h3> Extract the tar file </ h3>
 
-　アーカイブ化したものを展開するには、xf オプションを使用します。xはextractという意味で抽出という意味です。
+Use the xf option to extract the archived one. x means extract, which means extract.
 
 <pre>
 tar xf project.tar
-</pre>
+</ pre>
 
-<h3>アーカイブ化と圧縮の違い</h3>
+<h3> Difference between archiving and compression </ h3>
 
-　tarはアーカイブ化のためのコマンドで、圧縮・解凍のコマンド( <a href="/blog/20200608103245.html">gzip</a>,<a href="/blog/20200607103245.html">gunzip</a>など)とはことなります。アーカイブ化とは、複数のファイルをひとつのファイルにまとめることをいいます。圧縮とは、ひとつのファイルのバイト数を圧縮アルゴリズムを使って小さくすることをいいます。
+tar is a command for archiving, and compression / decompression commands (<a href="/blog/20200608103245.html"> gzip </a>, <a href="/blog/20200607103245.html"> gunzip < / a> etc.) is different. Archiving is the combination of multiple files into a single file. Compression is the reduction of the number of bytes in a file using a compression algorithm.
 
-<h3>gzipの圧縮・解凍と同時に行う「z」オプション</h3>
+<h3> "z" option to compress / decompress gzip at the same time </ h3>
 
-一般的にファイルは「tar.gz」で、固められていることが多いです。これは、tarでファイルをアーカイブ化した後に、gzipを使って、圧縮されているファイルです。
+Generally, the file is "tar.gz" and is often hardened. This is a file that has been compressed using gzip after archiving the file with tar.
 
 <pre>
 foo.tar.gz
-</pre>
+</ pre>
 
-これを一度に解凍・展開するには「z」オプションを追加することで行えます。
+You can unzip and unpack this all at once by adding the "z" option.
 
 <pre>
 tar xfz project.tar.gz
-</pre>
+</ pre>
 
-また、アーカイブ化と圧縮を同時に行うことも、zオプションを追加することで行えます。
+You can also archive and compress at the same time by adding the z option.
 
 <pre>
 tar cfz project.tar.gz project
-</pre>
+</ pre>
 
-「xfz」というオプションと「cfz」というオプションは非常によく使うので、覚えておきましょう。
+Keep in mind that the "xfz" and "cfz" options are very common.
 
-<h3>アーカイブ化や展開の処理内容を表示する「v」オプション</h3>
+<h3> "v" option to display the processing contents of archiving and decompression </ h3>
 
-「v」オプションを一緒に使用すると、アーカイブ化や展開の処理内容が出力されます。
+When used together with the "v" option, the processing contents of archiving and decompression are output.
 
 <pre>
 tar xfzv project.tar.gz
-</pre>
+</ pre>
 
-どんな処理が行われたがわかるので、理解しやすいです。
-
-
+It is easy to understand because you can see what kind of processing was done.

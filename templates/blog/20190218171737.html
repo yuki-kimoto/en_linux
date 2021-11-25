@@ -1,18 +1,18 @@
-<h2>インデックスに加えた変更を元に戻す / Git</h2>
+<h2> Undo changes made to the index / Git </ h2>
 
 
 
 
-<h3>インデックスに加えた変更を元に戻す</h3>
+<h3> Undo changes made to the index </ h3>
 
-　コミットを行うためにaddコマンドを使用してインデックスを更新したけれど、インデックスに加えた変更を元に戻したい場合があります。そのような場合はresetコマンドを使用します。
+You used the add command to update the index to commit, but you may want to undo the changes you made to the index. In such cases, use the reset command.
 
 <pre>
 git reset
-</pre>
+</ pre>
 
-　これでインデックスに加えた変更が元に戻ります。diffコマンドで確認して見ると、インデックスの状態が元に戻って、作業ツリーとの差分が表示されるのがわかると思います。
+This will undo the changes you made to the index. If you check it with the diff command, you can see that the index state is restored and the difference from the working tree is displayed.
 
 <pre>
 git diff
-</pre>
+</ pre>

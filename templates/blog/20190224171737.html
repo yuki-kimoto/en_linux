@@ -1,74 +1,74 @@
-<h2>gitのrebaseは作業中のブランチにmasterブランチを取り込むためのよい手段 / Git</h2>
+<h2> git's rebase is a good way to get the master branch into your working branch / Git </ h2>
 
 
 
-　gitにはrebaseというコマンドがある。でもまだrebaseコマンドの使う場面を理解していないん人は多いんじゃないかと思う。またrebaseは使い方を誤ると危険だということは本当だけれど、それは使う場面を間違えているのだと思う。
+Git has a command called rebase. But I think many people still don't understand when to use the rebase command. It's true that rebase is dangerous if used incorrectly, but I think it's the wrong place to use it.
 
-<h3>rebaseはいつ使うか</h3>
+<h3> When to use rebase </ h3>
 
-　rebaseはmasterブランチを派生させて作ったブランチ(fooとする)に、masterの新しい変更を取り込みたい場合に使います。
+Rebase is used when you want to incorporate new changes in master into a branch created by deriving the master branch (let's call it foo).
 
-　まず最初にmasterからfooというブランチを作成すると以下のような状態になります。
+First of all, if you create a branch called foo from master, it will be in the following state.
 
 <pre>
- *---*---* master
+ * --- * --- * master
          |
          * foo
-</pre>
+</ pre>
 
-　あなたはfooブランチで開発しています。fooブランチはすすんでいきますが、masterブランチも他の開発者の変更を取り込んですすんでいきます。以下のような状態になります。
+You are developing on the foo branch. The foo branch will continue, but the master branch will also incorporate changes from other developers. It will be in the following state.
 
 <pre>
- *---*---*---*---* master
+ * --- * --- * --- * --- * master
          |
-         *---*---* foo
-</pre>
+         * --- * --- * foo
+</ pre>
 
-　でも個々でmasterブランチで行われた変更を取り込みたくなったとします。ここでmasterをマージ(merge)することは避けたほうがよいでしょう。相互にマージしあうのは、コミット履歴をきれいに保つという面ではよくないです。masterがfooをマージするのはOKですが、fooがmasterをマージするのはやめておいたほうがよいでしょう。
+But suppose you want to capture the changes made in the master branch individually. You should avoid merging masters here. Merging each other is not good in terms of keeping the commit history clean. It's okay for master to merge foo, but it's a good idea to stop foo from merging master.
 
-　でもfooがmasterの変更を取り込みたいと思うときがあると思います。このような場合にrebaseを使います。rebaseを行うと、面白いことに、masterの先頭にfooブランチを付け替えてくれます。
+But I think there are times when foo wants to capture the changes in master. Use rebase in such cases. Interestingly, rebase will replace the foo branch at the beginning of master.
 
 <pre>
- *---*---*---*---* master
+ * --- * --- * --- * --- * master
                  |
-                 *---*---* foo
-</pre>
+                 * --- * --- * foo
+</ pre>
 
-　つまりmasterの先頭を元にしてfooブランチを作って、あなたの一連の変更を加えた状態にしてくれるということです。こうしておくとfooブランチをmasterにマージする作業がきれいに行えます。
+In other words, it will create a foo branch based on the beginning of master and make your series of changes. This will clean up the process of merging the foo branch into master.
 
-<h3>rebaseでは競合が発生するときがある</h3>
+<h3> Conflicts may occur in rebase </ h3>
 
-　rebaseでもマージ(merge)をするときと同じように競合が発生することがあります。masterでの変更とfooでの変更がぶつかっている場合は、普通に起こりえることです。こういう場合は競合を解消するようにソースコードを修正してから「git rebase --continue」を行います。
+Conflicts may occur in rebase as well as when merging. If the changes in master and the changes in foo clash, it's normal. In this case, modify the source code to resolve the conflict and then do "git rebase --continue".
 
-<h3>rebaseはコミット履歴を書き換えるので元には戻せない(しにくい?)</h3>
+<h3> rebase rewrites the commit history, so it cannot be restored (is it difficult?) </ H3>
 
-　rebaseはコミット履歴を書き換えます。ですから、rebase前に戻るということは、可能であるにしても、行いにくいので、その状態のブランチを一度別名で保存しておくことをおすすめします。
+Rebase rewrites the commit history. Therefore, it is difficult to go back to before rebase, even if it is possible, so it is recommended to save the branch in that state once with a different name.
 
 <pre>
-<h3> barを作って</h3>
- *---*---*---*---* master
+<h3> Make a bar </ h3>
+ * --- * --- * --- * --- * master
          |
-         *---*---* foo
+         * --- * --- * foo
                  |
                  * bar
 
-<h3> fooをrebase</h3>
- *---*---*---*---* master
-         |       |
-         |       *---*---* foo
-         |       
-         *---*---* bar
+<h3> rebase foo </ h3>
+ * --- * --- * --- * --- * master
+         | |
+         | * --- * --- * foo
+         |
+         * --- * --- * bar
 
-</pre>
+</ pre>
 
-　これで何か変なことが起こっても元に戻れますね。
+With this, even if something strange happens, it can be restored.
 
-<h3>rebaseはmasterブランチでは行わないこと</h3>
+<h3> Do not rebase on the master branch </ h3>
 
-　rebaseはコミット履歴を書き換えます。つまり、コミットの継続性がないということです。masterでrebaseを行ってしまうと、masterを参照している他の人が困ってしまいます。ですからmasterブランチではrebaseは使わないようにしましょう。
+Rebase rewrites the commit history. That is, there is no commit continuity. If you rebase with master, other people who are referencing master will be in trouble. So don't use rebase in your master branch.
 
-　rebaseはブランチで作業する人にとっては、ときどき必要になって、必須で覚えておきたほうがよい機能かと思います。どうやって作業中のブランチにmasterブランチの変更を取り込んだらいいんだって悩む前に覚えておくのがよいでしょう。
+Rebase is a feature that is necessary and should be remembered from time to time for those who work in branches. It's a good idea to remember before you worry about how to incorporate changes from the master branch into the branch you're working on.
 
-<h3>rebaseがうまくいかないときはmergeすればよい</h3>
+<h3> If rebase doesn't work, just merge </ h3>
 
-　とはいえrebaseしても、ソースコードがごちゃまぜになってしまって、うまくいかないことがときどきあります。そういうときは、コミット履歴よりも修正ができるかどうかという観点のほうが重要ですので、コミット履歴はごちゃっと混ざってしまってもmergeで解決するのがよいでしょう。
+However, even if you rebase, sometimes the source code gets mixed up and it doesn't work. In such a case, the point of view of whether or not it can be modified is more important than the commit history, so even if the commit history is mixed up, it is better to solve it with merge.

@@ -1,18 +1,18 @@
-<h2>標準エラー出力をパイプに流し込む方法</h2>
+<h2> How to pipe standard error output </ h2>
 
 
 
 
-　標準エラー出力をパイプに流し込むには次のように記述します(sh, bashの場合)。
+To flow the standard error output to the pipe, write as follows (in the case of sh and bash).
 
-<h3>標準エラー出力をパイプに流し込む</h3>
-
-<pre>
-コマンドA 2>&1 1>/dev/null | コマンドB
-</pre>
-
-<h3>標準出力と標準エラー出力の両方をパイプに流し込む</h3>
+<h3> Pour standard error into a pipe </ h3>
 
 <pre>
-コマンドA 2>&1 | コマンドB
-</pre>
+Command A 2> & 1 1> / dev / null | Command B
+</ pre>
+
+<h3> Pour both standard output and standard error into a pipe </ h3>
+
+<pre>
+Command A 2> & 1 | Command B
+</ pre>

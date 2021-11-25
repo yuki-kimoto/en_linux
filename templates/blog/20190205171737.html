@@ -1,26 +1,26 @@
-<h2>プロセスの存在確認を行う方法 kill -0</h2>
+<h2> How to check the existence of a process kill -0 </ h2>
 
 
 
 
-　プロセスの存在を確認するためには<b>kill</b>コマンドを使ってオプションに<b>0</b>を指定します。killに<b>0</b>オプションを指定する場合はプロセスは終了したりはしませんので安心してください。
-
-<pre>
-kill -0 プロセス番号
-</pre>
-
-　プロセスが存在するとコマンドが成功し何も出力しません。コマンドが失敗するとそのようなプロセスはないというメッセージがかえってきます。
-
-　これは<b>$?</b>を調べることで確認できます。成功した場合は<b>0</b>で、失敗した場合は<b>1</b>になります。
-
-　以下がサンプルのスクリプトです。
+To confirm the existence of the process, use the <b> kill </ b> command and specify <b> 0 </ b> as an option. Rest assured that if you specify the <b> 0 </ b> option for kill, the process will not be terminated.
 
 <pre>
-kill -0 16033 > /dev/null 2>&1
+kill -0 process number
+</ pre>
 
-if [ $? = 0 ]; then
-  echo "exists";
-else
-  echo "not exists"
+If the process exists, the command will succeed and nothing will be output. If the command fails, you will get a message that there is no such process.
+
+This can be confirmed by examining <b> $? </ B>. If it succeeds, it will be <b> 0 </ b>, and if it fails, it will be <b> 1 </ b>.
+
+The following is a sample script.
+
+<pre>
+kill -0 16033> / dev / null 2> & 1
+
+if [$? = 0]; then
+   echo "exists";
+else else
+   echo "not exists"
 fi
-</pre>
+</ pre>

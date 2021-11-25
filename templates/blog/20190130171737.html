@@ -1,90 +1,88 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
+    </ li>
+  </ ul>
+</ div>
 
-<h2>rsyncコマンド - ディレクトリを同期する</h2>
+<h2> rsync command-sync directories </ h2>
 
-rsyncコマンドを使うとディレクトリを同期できます。同期とは、二つのディレクトリを同じ状態にすることです。
+You can synchronize directories using the rsync command. Synchronization means putting two directories in the same state.
 
-これには、ディレクトリをコピーする機能も含まれているので、rsyncコマンドは、ディレクトリのコピーにも利用します。
+It also includes the ability to copy directories, so the rsync command can also be used to copy directories.
 
-rsyncは、差分だけを転送してくれます。ですので、大きなディレクトリでも、変更分だけが転送されるので、パフォーマンスが良いです。
+rsync will only transfer the diffs. So even in a large directory, only the changes are transferred, which is good performance.
 
-<h3>rsyncを使ってディレクトリを同期する</h3>
+<h3> Synchronize directories using rsync </ h3>
 
-まずは、rsyncを使って、ディレクトリを同期する方法を紹介します。これが、意外と曲者です。
-
-<pre>
-# ディレクトリをコピーする。src_dirの中身をdist_dirの中に同期する
-rsync -av src_dir/ dist_dir
-</pre>
-
-rsyncには、コマンドオプションがたくさんありますが、まずは「-a」と「-v」だけを覚えておきましょう。
-
-「-a」オプションは、他のオプションの組み合わせで、良さげに同期してくれるオプションです。
-
-「-v」オプションで、どのファイルを同期したかが出力されます。
-
-ここが最も大事ですが、rsyncでは、ディレクトリ名の後ろに「/」がつくか、つかないかで意味が変わってきます。
-
-ここをしっかり理解しておかないと、rsyncを実行するたびに、「あれれ」となります。
-
-rsyncでは、同期元のディレクトリの末尾に「/」が付く場合は、「ディレクトリの中身を」ということを意味します。
-
-同期先は、単にディレクトリ名を書きます。
-
-上記は、src_dirの中身をdist_dirの中に同期するという意味になります。
-
-コピー先のディレクトリがない場合は、自動的に作成されます。
-
-もし同期元のディレクトリ名の末尾に「/」がない場合は「src_dir」を「dist_dir」の中に同期するという意味になります。「dist_dir」の中に「src_dir」ができてしまいます。
-
-<h3>ローカル・リモート間でディレクトリを同期する</h3>
-
-rsyncは、ローカルの同期だけではなく、SSHプロトコルを使ったローカル・リモート間の同期をサポートしています。これは、バックアップに活用できます。
-
-ユーザー名、ホスト名、ポート番号の指定方法を記述しておきます。それ以外は、ローカルでの同期と同じです。
+First, I'll show you how to sync directories using rsync. This is surprisingly a songwriter.
 
 <pre>
-rsync -e "ssh -p 55555" -av /foo/src_dir/ kimoto@192.168.1.1:/bar/dist_dir
-</pre>
+#Copy the directory. Synchronize the contents of src_dir into dist_dir
+rsync -av src_dir / dist_dir
+</ pre>
 
-<h4>ユーザー名・ホスト名の書式</h4>
+There are many command options in rsync, but first remember only "-a" and "-v".
 
-リモートホストは以下のような書式で書きます。
+The "-a" option is a combination of other options that syncs nicely.
+
+The "-v" option prints which files were synced.
+
+This is the most important thing, but with rsync, the meaning depends on whether the directory name has a "/" after it or not.
+
+If you don't understand this well, you'll get "that" every time you run rsync.
+
+In rsync, a "/" at the end of the source directory means "the contents of the directory".
+
+For the synchronization destination, simply write the directory name.
+
+The above means syncing the contents of src_dir into dist_dir.
+
+If the destination directory does not exist, it will be created automatically.
+
+If there is no "/" at the end of the directory name of the synchronization source, it means to synchronize "src_dir" in "dist_dir". "Src_dir" will be created in "dist_dir".
+
+<h3> Synchronize directories between local and remote </ h3>
+
+rsync supports local and remote synchronization using the SSH protocol, as well as local synchronization. This can be used for backup.
+
+Describe how to specify the user name, host name, and port number. Other than that, it is the same as local synchronization.
 
 <pre>
-ユーザー名@ホスト名:ディレクトリ
-</pre>
+rsync -e "ssh -p 55555" -av / foo / src_dir / kimoto@192.168.1.1:/bar/dist_dir
+</ pre>
 
-<h4>ポート番号の指定</h4>
+<h4> Username / hostname format </ h4>
 
-ポート番号の指定は普通のオプションにはなくて、<b>-e</b>オプションでsshコマンドのオプションとして含める必要があります。
+Write the remote host in the following format.
 
 <pre>
--e "ssh -p ポート番号"
-</pre>
+Username @hostname: directory
+</ pre>
 
-<h3>バックアップ運用の自動化を行いたい</h3>
+<h4> Specifying the port number </ h4>
 
-バックアップ運用の自動化を行いたい場合は、バックアップサーバーでSSHの秘密鍵・公開鍵のペアを作って、それを使って、接続します。鍵があると、パスワードが必須ではないので、バックアップ運用を自動化できます。
+Specifying the port number is not an ordinary option and should be included as an option for the ssh command with the <b> -e </ b> option.
 
-SSHの鍵のペアの作り方は、別のところで、解説します。
+<pre>
+-e "ssh -p port number"
+</ pre>
 
+<h3> I want to automate backup operations </ h3>
 
+If you want to automate the backup operation, create an SSH private key / public key pair on the backup server and use it to connect. With the key, the password is not required, so backup operations can be automated.
+
+I will explain how to create an SSH key pair elsewhere.

@@ -1,337 +1,337 @@
-<h2>Gitの公開リポジトリと個人リポジトリの更新と公開のやり方</h2>
+<h2> How to update and publish Git public and personal repositories </ h2>
 
 
 
-　僕は開発では、バージョン管理システムとしてgitを使っているのですが、どうやってうまく使うのかが、今までよくわからなかったのが最近わかるようになってきました。Githubを使う分には、ぜんぜん問題がなかったのですが、社内で開発サーバーを自分で作って、複数人で開発を行うときの手順がわからなかったのが、最近わかるようになってきました。　 
+In development, I use git as a version control system, but recently I've come to understand that I wasn't sure how to use it well. There was no problem with using Github, but recently I've come to understand that I didn't know the procedure for creating a development server in-house and developing with multiple people. .. It was
 
-<h3>公開リポジトリと個人リポジトリ</h3>
+<h3> Public and personal repositories </ h3>
 
-　gitでは公開リポジトリと呼ばれるものと、個人リポジトリと呼ばれるものを明確に区別する必要があります。そしてAさんの公開リポジトリとBさんの公開リポジトリ、Aさんの個人リポジトリとBさんの個人リポジトリはすべて異なるものだということを理解する必要があります。
-
-<pre>
-<h3> 全部異なる!</h3>
-Aさんの公開リポジトリ
-Bさんの公開リポジトリ
-Aさんの個人リポジトリ
-Bさんの個人リポジトリ
-</pre>
-
-　(gitには--shareオプションと呼ばれるリポジトリを共有化する仕組みが備わっています。これはsubversionに似たものとなります。でもgitを使うからには、--shareは使わないで、分散リポジトリの利点を生かすのがよいと僕は考えます。)
-
-<h3>Aさんができる操作</h3>
-
-<h4>自分のリポジトリに対して</h4>
-
-　Aさんは、自分の個人リポジトリに変更を加えることができます。これは実質的な作業としては、ローカルな環境でのソースコードの変更をして、自分の個人リポジトリにコミットを行うことです。
-
-　その後Aさんは自分の公開リポジトリに、個人リポジトリの変更情報を、反映させます。この操作をpushといいます。
+In git, it is necessary to clearly distinguish between what is called a public repository and what is called a personal repository. And it is necessary to understand that Mr. A's public repository and Mr. B's public repository, Mr. A's personal repository and Mr. B's personal repository are all different.
 
 <pre>
-個人リポジトリを更新(commit) -> 公開リポジトリに反映(push)
-</pre>
+<h3> Everything is different! </ h3>
+Mr. A's public repository
+Mr. B's public repository
+Mr. A's personal repository
+Mr. B's personal repository
+</ pre>
 
-　公開リポジトリにpushを行うと、Bさんは変更した情報を取得することが可能になります。自分以外の人に公開されているので、公開リポジトリと呼ばれています。
+(Git has a mechanism for sharing repositories called the --share option. It's similar to subversion. But since you use git, you don't use --share and you can take advantage of distributed repositories. I think it's best to keep it alive.)
 
-　公開リポジトリの作成には「git clone」コマンドの--bareオプションを使用しします。作成するリポジトリの拡張子に.gitとつけます。具体的な作成方法については、後に解説します。
+<h3> Operations that Mr. A can do </ h3>
 
-<h4>Bさんのリポジトリに対して</h4>
+<h4> For your repository </ h4>
 
-　AさんはBさんの個人リポジトリに対しても公開リポジトリに対して、変更を加えることはできません。直接変更をくわえることができるのは自分の個人リポジトリに対してだけです。
+Mr. A can make changes to his personal repository. This is essentially a task of making source code changes in your local environment and committing to your personal repository.
 
-　AさんはBさんの公開リポジトリから、自分の個人リポジトリに変更された情報をもらうことができます。この操作をpullと呼びます。
-
-<pre>
-Bさんの公開リポジトリ -> Aさんの個人リポジトリに反映(pull)
-</pre>
-
-　AさんがBさんからもらった情報を、自分の公開リポジトリに反映させるには、自分の公開リポジトリに対して、pushする必要があります。
-
-　上記をまとめて図示すると次のようになります。
-<pre>
-                             Aさんが push
-Aさんの個人リポジトリ --------------------------> Aさんの公開リポジトリ
-      ^                                                    |
-      |                                                    |
-      | Aさんが pull                                       | Bさんが pull
-      |                                                    |
-      |                                                    |
-      |                      Bさんが push                  V
-Bさんの公開リポジトリ <--------------------------- Bさんの個人リポジトリ
-</pre>
-
-　AさんとBさんのそれぞれの個人リポジトリと公開リポジトリがぐるぐると四角で一方方向につながれているのが特徴です。
-
-<h3>共同開発するときは</h3>
-
-　何かアプリケーションをふたりで共同開発するときは、次のような流れになります。
+After that, Mr. A reflects the change information of the personal repository in his public repository. This operation is called push.
 
 <pre>
-1. Aさんがソースコードを変更します。
-2. Aさんは自分の個人リポジトリにコミットします。
-3. Aさんは個人リポジトリの変更を、自分の公開リポジトリにpushします。
-</pre>
-　この直後にBさんがソースコードに変更を加えたいとします。
+Commit personal repository-> Push to public repository
+</ pre>
+
+By pushing to the public repository, Mr. B will be able to get the changed information. It is called a public repository because it is open to people other than yourself.
+
+Use the --bare option of the "git clone" command to create a public repository. Add .git to the extension of the repository to be created. The specific creation method will be explained later.
+
+<h4> For Mr. B's repository </ h4>
+
+Mr. A cannot make changes to Mr. B's personal repository or public repository. You can only add changes directly to your personal repository.
+
+Mr. A can get the changed information from Mr. B's public repository to his personal repository. This operation is called pull.
+
 <pre>
-4. Bさんは、Aさんの公開リポジトリから情報を取得して、自分の個人リポジトリに反映(pull)します。これで、最新の状態のソースコードになります。
-5. Bさんはソースコードを変更します。
-6. Bさんは自分の個人リポジトリにコミットします。
-7. Bさんは個人リポジトリの変更を、自分の公開リポジトリにpushします。
-</pre>
-　そしてAさんが次に変更を加えたいときは、Bさんの公開リポジトリから情報を取得して、自分の個人リポジトリに反映しします。
+B's public repository-> Reflected in A's personal repository (pull)
+</ pre>
+
+In order for Mr. A to reflect the information received from Mr. B in his public repository, it is necessary to push to his public repository.
+
+The above is summarized and illustrated as follows.
 <pre>
-8. Bさんは、Aさんの公開リポジトリから情報を取得して、自分の個人リポジトリに反映(pull)します。これで、最新の状態のソースコードになります。
-9. 以下同
-</pre>
+                             Mr. A push
+Mr. A's personal repository --------------------------> Mr. A's public repository
+      ^ |
+      | |
+      | A pulls | B pulls
+      | |
+      | |
+      | Mr. B push V
+Mr. B's public repository <--------------------------- Mr. B's personal repository
+</ pre>
 
-　開発の基本的な流れはこんな感じです。えー順番にしか開発できないのと思った人もいると思います。でもgitはソースコードの差分をマージする機能を持っているので、平行して開発して、衝突したときは、矛盾がある部分だけを修正すればいいんです。
+The feature is that the personal repositories and public repositories of Mr. A and Mr. B are connected in one direction with a square.
 
-<h3>個人リポジトリと公開リポジトリの作成方法</h3>
+<h3> When collaboratively developing </ h3>
 
-　まずtaroとkenというユーザーがいると想定します。またSSHでリモートのサーバーに接続できるということと、Apacheが存在してWebサーバー(HTTPサーバー)にアクセスできると想定します。
+When collaboratively developing an application, the flow is as follows.
 
-　自分の個人リポジトリの情報を、自分の公開リポジトリにpushするためには、SSHが必要です。他の人の公開リポジトリの情報を、自分の個人リポジトリにpullするには、HTTPが必要です。(これ以外の方法もありますが、これが一番オーソドックス)
+<pre>
+1. Mr. A changes the source code.
+2. Mr. A commits to his personal repository.
+3. Mr. A pushes the changes in his personal repository to his public repository.
+</ pre>
+Immediately after this, Mr. B wants to make changes to the source code.
+<pre>
+4. Mr. B gets the information from Mr. A's public repository and pulls it to his personal repository. This will give you the latest source code.
+5. Mr. B changes the source code.
+6. Mr. B commits to his personal repository.
+7. Mr. B pushes the changes in his personal repository to his public repository.
+</ pre>
+And when Mr. A wants to make changes next time, he gets the information from Mr. B's public repository and reflects it in his personal repository.
+<pre>
+8. Mr. B gets the information from Mr. A's public repository and pulls it to his personal repository. This will give you the latest source code.
+9. Same as below
+</ pre>
 
-　今回は個人リポジトリも公開リポジトリも、同一のサーバーに置くことにしますが、通常は個人リポジトリはローカルの環境に、リモートリポジトリはリモートの環境に作成するのが普通です。
+The basic flow of development is like this. Well, I think some people thought that they could only develop in order. However, git has a function to merge the differences of the source code, so if you develop in parallel and there is a conflict, you only have to correct the inconsistent part.
 
-<h4>toroの個人リポジトリの作成</h4>
+<h3> How to create a personal repository and a public repository </ h3>
 
-　まずtaroでログインしましょう。laboという開発用のディレクトリを作成しましょう。
+First, assume that there are users taro and ken. We also assume that SSH can connect to a remote server and that Apache is present and can access the web server (HTTP server).
+
+SSH is required to push the information of your personal repository to your public repository. HTTP is required to pull information from someone else's public repository to your personal repository. (There are other methods, but this is the most orthodox)
+
+This time, both the personal repository and the public repository will be placed on the same server, but usually the personal repository is created in the local environment and the remote repository is created in the remote environment.
+
+<h4> Creating a personal repository for toro </ h4>
+
+First, log in with taro. Let's create a development directory called labo.
 
 <pre>
 mkdir labo
 cd labo
-</pre>
+</ pre>
 
-　次にmyappというアプリケーションのためのディレクトリを作成しましょう。
+Next, let's create a directory for an application called myapp.
 
 <pre>
 mkdir myapp
 cd myapp
-</pre>
+</ pre>
 
-　さぁ、taroのmyappのための個人リポジトリを作成しましょう。個人リポジトリの作成はmyappというディレクトリに入って「git init」をするだけです。
+Now, let's create a personal repository for taro's myapp. To create a personal repository, just go into a directory called myapp and do "git init".
 
 <pre>
 git init
-</pre>
+</ pre>
 
-　開発が始まります。何でもよいのですが、README.txtというファイルを最初に作ってみます。
+Development will begin. Anything is fine, but let's create a file called README.txt first.
 
 <pre>
 touch README.txt
-</pre>
+</ pre>
 
-　そして、個人リポジトリにコミットします。「git add」で一時的にコミットしてから、「git commit」でコミットします。
+Then, commit to the personal repository. Temporarily commit with "git add" and then commit with "git commit".
 <pre>
-git add .
+git add.
 git commit -m "first commit"
-</pre>
+</ pre>
 
-　ユーザー名とメールアドレスの設定が求められた場合は設定しましょう。これは一度だけです。
+If you are asked to set a user name and email address, let's set it. This is only once.
 <pre>
 git config --global user.name "taro"
 git config --global user.email taro@foo.com
-</pre>
+</ pre>
 
-<h4>taroの公開リポジトリの設定</h4>
+<h4> Setting taro's public repository </ h4>
 
-　公開リポジトリは個人リポジトリをcloneして作成します。公開リポジトリの場合は、--bareオプションを使って作成します。拡張子は.gitにしましょう。
+The public repository is created by cloning a personal repository. For public repositories, create them with the --bare option. The extension should be .git.
 
 <pre>
-cd ~/labo
+cd ~ / labo
 git clone --bare myapp myapp.git
-</pre>
+</ pre>
 
-　次に公開用のリポジトリにするためにいくつかの設定をします。公開リポジトリであることを示すためにgit-daemon-export-okというファイルを作成します。またHTTPサーバーで公開するためのいくつかの設定をします。
+Next, make some settings to make it a public repository. Create a file called git-daemon-export-ok to indicate that it is a public repository. Also, make some settings for publishing on the HTTP server.
 
 <pre>
 cd myapp.git
 touch git-daemon-export-ok
 git --bare update-server-info
-mv hooks/post-update.sample hooks/post-update
-</pre>
+mv hooks / post-update.sample hooks / post-update
+</ pre>
 
-　次にこれをkenに公開するためにHTTPサーバーであるApacheが見ることのできる場所に、場所に移動します。ホームディレクトリ以下にpublic_htmlというディレクトを作成して、その中にmyapp.gitを配置しましょう。
+Next, in order to publish this to ken, move to a location where Apache, which is an HTTP server, can see it. Create a directory called public_html under your home directory and place myapp.git in it.
 
 <pre>
 cd ~
 mkdir public_html
-mv ~/labo/myapp.git ~/public_html/
-</pre>
+mv ~ / labo / myapp.git ~ / public_html /
+</ pre>
 
-　次にApacheのバージョンが2以降である場合は、設定ファイルを修正する必要があります。mod_userdirというモジュールを使って、各ユーザーのpublic_htmlがApacheからみえるようにします。この作業はroot権限で行う必要があります。Apacheの設定ファイルであるhttpd.confを修正しましょう。(CentOSでは、/etc/httpd/conf/httpd.conにあります)
+Next, if the Apache version is 2 or later, you need to modify the configuration file. Use a module called mod_userdir to make each user's public_html visible to Apache. This must be done with root privileges. Let's modify the Apache configuration file httpd.conf. (On CentOS, it's in /etc/httpd/conf/httpd.con)
 
 <pre>
 <IfModule mod_userdir.c>
     #
-    # UserDir is disabled by default since it can confirm the presence
-    # of a username on the system (depending on home directory
+    #UserDir is disabled by default since it can confirm the presence
+    # of a username on the system (depending on home directory)
     # permissions).
     #
     # UserDir disable
 
     #
-    # To enable requests to /~user/ to serve the user's public_html
-    # directory, remove the "UserDir disable" line above, and uncomment
+    # To enable requests to / ~ user / to serve the user's public_html
+    #directory, remove the "UserDir disable" line above, and uncomment
     # the following line instead:
     #
     UserDir public_html
 
-</IfModule>
-</pre>
+</ IfModule>
+</ pre>
 
-　UserDir disableの部分をコメントにして、UserDir public_htmlの部分のコメントをはずしましょう。
+Make the UserDir disable part a comment and uncomment the UserDir public_html part.
 
-　またもうひとつの注意点として、公開するためには、taroのディレクトリが他のユーザーから読み込むことができる必要があります。chmodで権限を変更しておきましょう。
+Another point to note is that the taro directory must be readable by other users in order to be published. Let's change the permissions with chmod.
 
 <pre>
-chmod 755 /home/taro
-</pre>
+chmod 755 / home / taro
+</ pre>
 
-<h4>個人リポジトリから公開リポジトリにpushする</h4>
+<h4> Push from personal repository to public repository </ h4>
 
-　公開リポジトリを作成したので、個人リポジトリの情報を公開リポジトリにpushすることができます。
+Create a public repositoryNow you can push the information in your personal repository to the public repository.
 
-　では少しソースコードに変更を加えてコミットしましょう。
+Let's make some changes to the source code and commit.
 <pre>
-cd ~/labo/myapp
-echo 'Hi' > README.txt
-git add .
+cd ~ / labo / myapp
+echo'Hi'> README.txt
+git add.
 git commit -m "second updated"
-</pre>
+</ pre>
 
-　これを自分の公開リポジトリにpushします。
+Push this to your public repository.
 
 <pre>
-git push ssh://taro@localhost/~/public_html/myapp.git master
-</pre>
+git push ssh: //taro@localhost/~/public_html/myapp.git master
+</ pre>
 
-　次のようなメッセージがでて、公開リポジトリに、個人リポジトリの変更が反映されます。
+The following message will be displayed, and the changes in the personal repository will be reflected in the public repository.
 <pre>
 Counting objects: 5, done.
 Writing objects: 100% (3/3), 235 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To ssh://taro@localhost/~/public_html/myapp.git
-   a922551..bc2387e  master -> master
-</pre>
+To ssh: //taro@localhost/~/public_html/myapp.git
+   a922551..bc2387e master-> master
+</ pre>
 
-<h3>kenが開発に参加</h3>
+<h3> ken participates in development </ h3>
 
-　kenが開発に参加しました。taroの開発しているソースコードに変更を加えたいです。流れとしては、まずkenの個人リポジトリを作成します。これは、taroが公開しているmyappのリポジトリそのものになります。
+Ken participated in the development. I want to make changes to the source code developed by taro. As a flow, first create a personal repository of ken. This will be the myapp repository itself published by taro.
 
-　これをcloneしましょう。まずkenでログインします。開発場所にするlaboディレクトリを作成しましょう。
+Let's clone this. First, log in with ken. Create a labo directory for your development location.
 
 <pre>
 mkdir labo
-cd ~/labo
-</pre>
+cd ~ / labo
+</ pre>
 
-　「/home/taro/public_html/myapp.git」に置いたtaroの公開リポジトリは「http://localhost/~taro/myapp.git」というURLでアクセスできます。
+The public repository of taro placed in "/home/taro/public_html/myapp.git" can be accessed with the URL "http: //localhost/~taro/myapp.git".
 
-　このURLを指定して、taroの公開リポジトリを、kenの個人リポジトリとしてコピーしましょう。
+Specify this URL and copy taro's public repository as ken's personal repository.
 
 <pre>
-git clone http://localhost/~taro/myapp.git
-</pre>
+git clone http: //localhost/~taro/myapp.git
+</ pre>
 
-　するとmyappというディレクトリがコピーされているので、中に入りましょう。
+Then, the directory called myapp is copied, so let's go inside.
 
 <pre>
 cd myapp
-</pre>
+</ pre>
 
-　これで開発が始められます。少し変更を加えてコミットしましょう。
+Development can now be started. Let's make a few changes and commit.
 
 <pre>
-echo 'ppp' ``` README.txt
-git add .
+echo'ppp' ``` README.txt
+git add.
 git commit -m "something changed"
-</pre>
+</ pre>
 
-　ユーザー名とメールアドレスの設定が求められた場合は設定しましょう。これは一度だけです。
+If you are asked to set a user name and email address, let's set it. This is only once.
 
 <pre>
 git config --global user.name "ken"
 git config --global user.email ken@foo.com
-</pre>
+</ pre>
 
-　次にkenの公開用のリポジトリを作成しましょう。taroのときとまったく同じ手順です。
+Next, let's create a repository for publishing ken. The procedure is exactly the same as for taro.
 
 <pre>
-cd ~/labo
+cd ~ / labo
 git clone --bare myapp myapp.git
 cd myapp.git
 touch git-daemon-export-ok
 git --bare update-server-info
-mv hooks/post-update.sample hooks/post-update
-</pre>
+mv hooks / post-update.sample hooks / post-update
+</ pre>
 
-　次にこれをtaroに公開するためにHTTPサーバーであるApacheが見ることのできる場所に、場所に移動します。ホームディレクトリ以下にpublic_htmlというディレクトを作成して、その中にmyapp.gitを配置しましょう。
+Next, in order to publish this to taro, move to a location where Apache, which is an HTTP server, can see it. Create a directory called public_html under your home directory and place myapp.git in it.
 
 <pre>
 cd ~
 mkdir public_html
-mv ~/labo/myapp.git ~/public_html/
-</pre>
+mv ~ / labo / myapp.git ~ / public_html /
+</ pre>
 
- 公開するためには、kenのディレクトリが他のユーザーから読み込むことができる必要があります。root権限になってchmodで権限を変更しておきましょう。
-
-<pre>
-chmod 755 /home/ken
-</pre>
-
-<h4>個人リポジトリから公開リポジトリにpushする</h4>
-
-　さぁ、もう少し変更を加えて、kenの個人リポジトリから、kenの公開リポジトリにpushしてみましょう。これはtaroで解説した手順とまったく同じものです。
+ In order to be published, the ken directory must be readable by other users. Become root and change the permissions with chmod.
 
 <pre>
-cd ~/labo/myapp
-echo 'PoPo' ``` README.txt
-git add .
+chmod 755 / home / ken
+</ pre>
+
+<h4> Push from personal repository to public repository </ h4>
+
+Now, let's make a few more changes and push from ken's personal repository to ken's public repository. This is exactly the same procedure described in taro.
+
+<pre>
+cd ~ / labo / myapp
+echo'PoPo' ``` README.txt
+git add.
 git commit -m "ken more update"
-</pre>
+</ pre>
 
-　これを自分の公開リポジトリにpushします。
-
-<pre>
-git push ssh://ken@localhost/~/public_html/myapp.git master
-</pre>
-
-　これでkenの公開リポジトリは最新のものになりました。
-
-<h3>taroが開発を続ける</h3>
-
-　taroが続けて開発を続けるには、まずkenの変更を公開リポジトリから取り込む必要(pull)があります。
+Push this to your public repository.
 
 <pre>
-cd ~/labo/myapp
-git pull http://localhost/~ken/myapp.git
-</pre>
+git push ssh: //ken@localhost/~/public_html/myapp.git master
+</ pre>
 
-　以下のように変更が取り込まれます。
+The public repository of ken is now up to date.
+
+<h3> taro continues development </ h3>
+
+In order for taro to continue development, it is necessary to first pull the ken changes from the public repository (pull).
 
 <pre>
- * branch            HEAD       -> FETCH_HEAD
+cd ~ / labo / myapp
+git pull http: //localhost/~ken/myapp.git
+</ pre>
+
+The changes will be incorporated as follows.
+
+<pre>
+ * branch HEAD-> FETCH_HEAD
 Updating bc2387e..260f45b
 Fast-forward
- README.txt |    2 ++
- 1 files changed, 2 insertions(+), 0 deletions(-)
-</pre>
+ README.txt | 2 ++
+ 1 files changed, 2 insertions (+), 0 deletions (-)
+</ pre>
 
-　後は最初のところで説明したように、taroとkenが、pushとpullを繰り返して開発を進めていきます。
+After that, as explained at the beginning, taro and ken will repeat push and pull to proceed with development.
 
 <pre>
-                             kenが push
-kenの個人リポジトリ --------------------------> kenの公開リポジトリ
-      ^                                                    |
-      |                                                    |
-      | kenが pull                                         | taroが pull
-      |                                                    |
-      |                                                    |
-      |                      taroが push                   V
-taroの公開リポジトリ <--------------------------- taroの個人リポジトリ
-</pre>
+                             ken push
+ken's personal repository --------------------------> ken's public repository
+      ^ |
+      | |
+      | ken pulls | taro pulls
+      | |
+      | |
+      | taro push V
+taro's public repository <--------------------------- taro's personal repository
+</ pre>
 
-　以上がgitを使った、共同開発の流れでした。終わり。そのうちに、perlbrewやcpanmと組み合わせた開発手法も解説したいと思います。
+The above is the flow of joint development using git. the end. In the meantime, I would like to explain the development method combined with perlbrew and cpanm.
 
-　(リモートサーバーに公開リポジトリを置く場合はlocalhostの部分をリモートサーバーのアドレスにするだけです。)
+(If you put the public repository on the remote server, just change the localhost part to the address of the remote server.)
