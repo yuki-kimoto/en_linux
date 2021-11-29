@@ -18,7 +18,7 @@
   </ul>
 </div>
 
-<h2> rsync command-sync directories </h2>
+<h2> rsync command - sync directories </h2>
 
 You can synchronize directories using the rsync command. Synchronization means putting two directories in the same state.
 
@@ -31,8 +31,8 @@ rsync will only transfer the diffs. So even in a large directory, only the chang
 First, I'll show you how to sync directories using rsync. This is surprisingly a songwriter.
 
 <pre>
-#Copy the directory. Synchronize the contents of src_dir into dist_dir
-rsync -av src_dir / dist_dir
+# Copy the directory. Synchronize the contents of src_dir into dist_dir
+rsync -av src_dir/ dist_dir
 </pre>
 
 There are many command options in rsync, but first remember only "-a" and "-v".
@@ -62,7 +62,7 @@ rsync supports local and remote synchronization using the SSH protocol, as well 
 Describe how to specify the user name, host name, and port number. Other than that, it is the same as local synchronization.
 
 <pre>
-rsync -e "ssh -p 55555" -av / foo / src_dir / kimoto@192.168.1.1:/bar/dist_dir
+rsync -e "ssh -p 55555" -av /foo/src_dir/ kimoto@192.168.1.1:/bar/dist_dir
 </pre>
 
 <h4> Username / hostname format </h4>
@@ -70,7 +70,7 @@ rsync -e "ssh -p 55555" -av / foo / src_dir / kimoto@192.168.1.1:/bar/dist_dir
 Write the remote host in the following format.
 
 <pre>
-Username @hostname: directory
+UserName@HostName:Directory
 </pre>
 
 <h4> Specifying the port number </h4>

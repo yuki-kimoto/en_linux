@@ -16,11 +16,11 @@ This can be confirmed by examining <b> $? </B>. If it succeeds, it will be <b> 0
 The following is a sample script.
 
 <pre>
-kill -0 16033> / dev / null 2> & 1
+kill -0 16033 > /dev/null 2>&1
 
-if [$? = 0]; then
-   echo "exists";
-else else
-   echo "not exists"
+if [ $? = 0 ]; then
+  echo "exists";
+else
+  echo "not exists"
 fi
 </pre>

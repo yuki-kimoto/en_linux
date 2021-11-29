@@ -5,13 +5,11 @@
 Create a macro for automatic connection with SSH2 with TeraTerm on Windows. Save it as login.ttl wherever you like. Write your own in / user and / passwd. In / keyfile, specify the path of the private key.
 
 <pre>
-connect '192.168.0.2:22 / ssh / 2 / auth = publickey / keyfile = / user = / passwd ='
+connect '192.168.0.2:22 /ssh /2 /auth=publickey /keyfile= /user= /passwd='
 </pre>
 
 For the connect option of Teraterm macro, here is a reference.
 
-<pre>
-[http://ttssh2.sourceforge.jp/manual/ja/macro/command/connect.html:title=connect]
-</pre>
+<a href="https://ttssh2.osdn.jp/manual/4/en/macro/command/connect.html">connect - TeraTerm Commands</a>
 
 After that, if you associate this .ttl file with "ttpmacro.exe", you can click it to start it.

@@ -8,11 +8,11 @@ To flow the standard error output to the pipe, write as follows (in the case of 
 <h3> Pour standard error into a pipe </h3>
 
 <pre>
-Command A 2> & 1 1> / dev / null | Command B
+CommandA 2>&1 1>/dev/null | CommandB
 </pre>
 
 <h3> Pour both standard output and standard error into a pipe </h3>
 
 <pre>
-Command A 2> & 1 | Command B
+CommandA 2>&1 | CommandB
 </pre>
