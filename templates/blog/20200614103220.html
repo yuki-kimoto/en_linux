@@ -1,23 +1,23 @@
-<h2> xargs command --Converts standard input line output to command line arguments and runs the program </ h2>
+<h2> xargs command --Converts standard input line output to command line arguments and runs the program </h2>
 
 The xargs command translates the line output of standard input into command line arguments and runs the program.
 
 <pre>
 Command to output line | xargs program
-</ pre>
+</pre>
 
-The command to output the line can be anything, but the <a href="/blog/20200317121556.html"> find </a> command and the <a href="/blog/20200602093211.html"> grep </a> > It is assumed that "-rl" is specified in the command.
+The command to output the line can be anything, but the <a href="/blog/20200317121556.html"> find</a> command and the <a href="/blog/20200602093211.html"> grep</a> > It is assumed that "-rl" is specified in the command.
 
 <pre>
 find * | xargs program
 grep -rl'Hello' dir | xargs program
-</ pre>
+</pre>
 
 As an example, let's take a look at the output of the find command. Get the file name in templates / blog.
 
 <pre>
 find templates / blog
-</ pre>
+</pre>
 
 This is the output result.
 
@@ -30,14 +30,14 @@ templates / blog / 20200520082545.html
 templates / blog / 20190309171737.html
 templates / blog / 20191205081119.html
 templates / blog / 20191218072611.html
-</ pre>
+</pre>
 
 When you want to pass this list of filenames to the command line arguments of another program, you need to use xargs.
 
-For example, consider using <a href="https://perlzemi.com/"> Perl </a> to make a replacement.
+For example, consider using <a href="https://perlzemi.com/"> Perl</a> to make a replacement.
 
 For the above file, replace "Hello" with "Good evening". Write the following using the xargs command:
 
 <pre>
 find templates / blog | xargs perl -pi -e's / hello / good evening / g'
-</ pre>
+</pre>

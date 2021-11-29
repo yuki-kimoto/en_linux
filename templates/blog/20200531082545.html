@@ -2,35 +2,35 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
+    </li>
+  </ul>
+</div>
 
-<h2> du command-check directory capacity </ h2>
+<h2> du command-check directory capacity </h2>
 
 You can check the directory capacity with the du command. If no directory name is specified, the current directory will be the target.
 
 <pre>
 du directory name
-</ pre>
+</pre>
 
 This is a sample to check the directory capacity with du.
 
 <pre>
 
-</ pre>
+</pre>
 
 This is a sample output result.
 
@@ -44,17 +44,17 @@ This is a sample output result.
 324 templates / static
 28 templates / common
 828 templates
-</ pre>
+</pre>
 
 The capacity is displayed in kilobytes for each directory and subdirectory.
 
-<h3> To display in an easy-to-understand manner with units </ h3>
+<h3> To display in an easy-to-understand manner with units </h3>
 
 Use the "-h" option to clearly display the units of the du command.
 
 <pre>
 du -h
-</ pre>
+</pre>
 
 The output result has a unit.
 
@@ -70,15 +70,15 @@ tmpfs 3.9G 0 3.9G 0% / sys / fs / cgroup
 / dev / sdc1 1007G 77M 956G 1% / datadrive
 / dev / sdb1 16G 45M 15G 1% / mnt
 tmpfs 794M 0 794M 0% / run / user / 1001
-</ pre>
+</pre>
 
-<h3> Arrange directory usage from top to bottom </ h3>
+<h3> Arrange directory usage from top to bottom </h3>
 
 To display the directory usage in order from the top, combine sort and head with the du command. Useful for discovering large directories.
 
 <pre>
 du templates | sort -rn | head -20
-</ pre>
+</pre>
 
 The output results are output in descending order of directory capacity.
 
@@ -92,16 +92,16 @@ The output results are output in descending order of directory capacity.
 12 templates / static / css
 8 templates / static / images
 4 templates / static / blog
-</ pre>
+</pre>
 
 Specifying "/" for du and waiting for a while is convenient because you can see which directories are consuming space on the entire system.
 
-<h3> How to check the capacity of the disk? </ H3>
+<h3> How to check the capacity of the disk? </H3>
 
 Use the df command to check the capacity of the disk.
 
 Note that the du command is a command to check the directory capacity, and the df command is used to check the disk capacity.
 
 <ul>
-  <li> <a href="/blog/20200601093211.html"> df command --check disk capacity </a> </ li>
-</ ul>
+  <li> <a href="/blog/20200601093211.html"> df command --check disk capacity</a> </li>
+</ul>

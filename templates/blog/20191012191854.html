@@ -2,43 +2,43 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
+    </li>
+  </ul>
+</div>
 
-<h2> cd command-change current directory </ h2>
+<h2> cd command-change current directory </h2>
 
-You can change the <a href="/blog/20191218072611.html"> current directory </a> using the cd command.
+You can change the <a href="/blog/20191218072611.html"> current directory</a> using the cd command.
 
 <pre>
 cd directory name
-</ pre>
+</pre>
 
-<h4> Specify the directory name with a relative path </ h4>
+<h4> Specify the directory name with a relative path </h4>
 
 To change the current directory to the directory "labo" with the cd command, execute the following command.
 
 <pre>
 cd labo
-</ pre>
+</pre>
 
 This means that the "labo" directory in the current hierarchy of the current directory is the current directory, starting from the current current directory.
 
 This is called specifying the directory name with a relative path.
 
-<h4> Specify the directory name with an absolute path </ h4>
+<h4> Specify the directory name with an absolute path </h4>
 
 You can also specify the directory name with an absolute path with the cd command.
 
@@ -46,11 +46,11 @@ To change to the directory "/ usr / local / lib", execute the following command.
 
 <pre>
 cd / usr / local / lib
-</ pre>
+</pre>
 
 Absolute paths are characterized by starting with "/". The cd command looks at the leading "/" to identify whether it is a relative path or an absolute path.
 
-<h3> What is the current directory? </ H3>
+<h3> What is the current directory? </H3>
 
 The current directory is the directory you are currently working on. Think of a directory in Linux as having the same meaning as a folder in Windows.
 
@@ -59,33 +59,33 @@ When you log in to Linux, the location called your home directory is your curren
 
 <pre>
 / home / kimoto
-</ pre>
+</pre>
 
 You can use the pwd command to display the current directory.
 
 <pre>
 pwd
-</ pre>
+</pre>
 
 If you find yourself in the wrong directory, you can check it with the pwd command.
 
-<h3> Special directory name </ h3>
+<h3> Special directory name </h3>
 
 Remember the following directory names as special directory names.
 
-<h4> Current current directory-. </ h4>
+<h4> Current current directory-. </h4>
 
 "." Is a special directory name that points to the current current directory.
 
 <pre>
 cd.
-</ pre>
+</pre>
 
 This just changes the current directory to the current current directory, so nothing happens.
 
 But remember the meaning. The cd command has no particular meaning, but there are some situations where it makes sense.
 
-<h4> Parent directory --.. </ h4>
+<h4> Parent directory --.. </h4>
 
 ".." is a special directory name that points to the parent directory.
 
@@ -93,25 +93,25 @@ It is frequently used when you want to change the current directory and return t
 
 <pre>
 cd ..
-</ pre>
+</pre>
 
-<h4> Home directory-~ </ h4>
+<h4> Home directory-~ </h4>
 
 "~" Is a special directory name that points to your home directory.
 
 <pre>
 cd ~
-</ pre>
+</pre>
 
 If the user is "kimoto", the home directory will be expanded as follows.
 
 <pre>
 cd / home / kimoto
-</ pre>
+</pre>
 
 The special directories ".", "..", and "~" are not actually interpreted by the cd command, but by the shell, but they are frequently used by the cd command, so I will introduce them. Did.
 
-<h3> cd command sample </ h3>
+<h3> cd command sample </h3>
 
 This is a sample that changes the current directory to the home directory, creates a labo directory there, and changes the current directory to the labo directory.
 
@@ -127,10 +127,10 @@ cd labo
 
 Check the current current directory with the #pwd command
 pwd
-</ pre>
+</pre>
 
 In the Perl seminar environment, it was displayed as follows.
 
 <pre>
 / home / kimoto / labo
-</ pre>
+</pre>

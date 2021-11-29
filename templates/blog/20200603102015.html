@@ -2,58 +2,58 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
+    </li>
+  </ul>
+</div>
 
-<h2> chown command-change owner user </ h2>
+<h2> chown command-change owner user </h2>
 
 You can change the owner user using the chown command.
 
 <pre>
 chown owner user file name
-</ pre>
+</pre>
 
 This is a sample to change the owner user with the chown command.
 
 <pre>
 chown kimoto file
-</ pre>
+</pre>
 
 See the permissions article for owner users.
 
-<a href="/blog/20200526082545.html"> What are permissions? </a>
+<a href="/blog/20200526082545.html"> What are permissions?</a>
 
-<h3> Change the owner group as well </ h3>
+<h3> Change the owner group as well </h3>
 
 You can change the owner group as well as the owner user with the chown command.
 
 <pre>
 chown owner user: owner group filename
-</ pre>
+</pre>
 
 This is a sample to change the owner group in addition to the owner user.
 
 <pre>
 chown kimoto: myapp file
-</ pre>
+</pre>
 
-<h3> Recursively change the owner user </ h3>
+<h3> Recursively change the owner user </h3>
 
 Use the "-R" option to recursively change the owner user.
 
 <pre>
 chown -R kimoto dir
-</ pre>
+</pre>

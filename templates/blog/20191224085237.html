@@ -1,22 +1,22 @@
-<h2> What is a directory? </ H2>
+<h2> What is a directory? </H2>
 
-A directory is a special <a href="/blog/20191223081048.html"> file </a> that contains a list of file names one level below.
+A directory is a special <a href="/blog/20191223081048.html"> file</a> that contains a list of file names one level below.
 
-As a special case, <a href="/blog/20191218072611.html"> current directory </a> "." And <a href="/blog/20191219082642.html"> parent directory </a> ".. "Is also written in the directory as a list of file names.
+As a special case, <a href="/blog/20191218072611.html"> current directory</a> "." And <a href="/blog/20191219082642.html"> parent directory</a> ".. "Is also written in the directory as a list of file names.
 
 File-related information such as permissions, owner users, owner groups, file size, modification date and time is managed by a mechanism called inode.
 
 Since the inode number corresponding to the file name is written in the directory, you can also get the information.
 
-<h3> List of file names written in the directory </ h3>
+<h3> List of file names written in the directory </h3>
 
-You can use the <a href="/blog/20191126082723.html"> ls command </a> to get a list of the files in the directory.
+You can use the <a href="/blog/20191126082723.html"> ls command</a> to get a list of the files in the directory.
 
 Note that the term file list here includes regular files and directories.
 
 <pre>
 ls
-</ pre>
+</pre>
 
 This is a sample output result of the ls command. foo.txt and bar.png are regular files. test is a directory.
 
@@ -24,13 +24,13 @@ This is a sample output result of the ls command. foo.txt and bar.png are regula
 foo.txt
 test
 bar.png
-</ pre>
+</pre>
 
-You can use the "-a" option to view all files, including <a href="/blog/20191220091958.html"> hidden files </a>.
+You can use the "-a" option to view all files, including <a href="/blog/20191220091958.html"> hidden files</a>.
 
 <pre>
 ls -a
-</ pre>
+</pre>
 
 <pre>
 ..
@@ -39,15 +39,15 @@ ls -a
 foo.txt
 test
 bar.png
-</ pre>
+</pre>
 
-<h3> Display detailed information including file information </ h3>
+<h3> Display detailed information including file information </h3>
 
 You can use the "-a" option of the ls command to display detailed information, including file information.
 
 <pre>
 ls -a
-</ pre>
+</pre>
 
 This is a sample output of "ls -a".
 
@@ -55,4 +55,4 @@ This is a sample output of "ls -a".
 -rw-rw-r-- 1 kimoto kimoto 0 Dec 25 08:41 test.pl
 drwxrwxr-x 41 kimoto kimoto 4096 Dec 20 16:53 labo
 drwxr-xr-x 2 kimoto kimoto 4096 Apr 5 2019 lib
-</ pre>
+</pre>

@@ -2,68 +2,68 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
+    </li>
+  </ul>
+</div>
 
-<h2> ssh command --connect to SSH server </ h2>
+<h2> ssh command --connect to SSH server </h2>
 
 You can use the ssh command to connect to an SSH server and execute commands using the SSH protocol.
 
 <pre>
 ssh connection destination
-</ pre>
+</pre>
 
 Describe the connection destination as follows. If you omit the user name, it will be the same as the local user.
 
 <pre>
 Username @hostname
-</ pre>
+</pre>
 
 This is a sample to connect with ssh.
 
 <pre>
 ssh kimoto@59.105.185.193
-</ pre>
+</pre>
 
-<h4> Specify the port number </ h4>
+<h4> Specify the port number </h4>
 
 Use the "-p" option to specify the port number to connect to with the ssh command.
 
 <pre>
 ssh -p 55555 kimoto@59.105.185.193
-</ pre>
+</pre>
 
-<h4> Default private key used by ssh command </ h4>
+<h4> Default private key used by ssh command </h4>
 
 The default private key used by the ssh command is:
 
 <pre>
 ~ / .ssh / id_rsa
-</ pre>
+</pre>
 
-<h4> Specify the private key file </ h4>
+<h4> Specify the private key file </h4>
 
 You can specify the private key file with the "-i" option for the private key. In the case of a relative path, it will be the path from "~ / .ssh".
 
 <pre>
 ssh -i id_rsa_example kimoto@59.105.185.193
 ssh -i /path/id_rsa_example kimoto@59.105.185.193
-</ pre>
+</pre>
 
-<h4> Setting to use by specifying the private key file when SSH connection to a specific domain </ h4>
+<h4> Setting to use by specifying the private key file when SSH connection to a specific domain </h4>
 
 You can use the configuration file "~ / .ssh / config" to specify the private key file for SSH connection to a specific domain.
 
@@ -74,10 +74,10 @@ Host github github.com
   HostName github.com
   IdentityFile ~ / .ssh / id_rsa_github
   User git
-</ pre>
+</pre>
 
 Let's also set the permission to 600.
 
 <pre>
 chmod 600 ~ / .ssh / config
-</ pre>
+</pre>

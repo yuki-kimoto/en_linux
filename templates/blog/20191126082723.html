@@ -2,42 +2,42 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
-<h2> ls command-display file list </ h2>
+    </li>
+  </ul>
+</div>
+<h2> ls command-display file list </h2>
 
 The ls command is a Linux command for displaying a list of files.
 
 <pre>
 ls
-</ pre>
+</pre>
 
 This is a sample output when ls is executed. A list of files and directories is displayed.
 
 <pre>
 convert_markdown.pl giblog.conf lib public README serve.pl templates
-</ pre>
+</pre>
 
-<h3> Show file details "-l" option </ h3>
+<h3> Show file details "-l" option </h3>
 
 You can use the "-l" option to view the file list in detail.
 
 <pre>
 ls -l
-</ pre>
+</pre>
 
 It is a detailed display of the file list when "ls -l" is executed.
 
@@ -49,23 +49,23 @@ drwxrwxr-x 7 kimoto kimoto 4096 Aug 10 15:04 public
 -rw-r--r-- 1 kimoto kimoto 227 Aug 10 15:01 README
 -rw-r--r-- 1 kimoto kimoto 219 Aug 10 15:01 serve.pl
 drwxrwxr-x 5 kimoto kimoto 4096 Aug 10 15:01 templates
-</ pre>
+</pre>
 
 On the left, you'll see the file permissions. Then the username, group name, file size, modification date, file name, and so on.
 
-<h3> "-h" option to display the file size in units </ h3>
+<h3> "-h" option to display the file size in units </h3>
 
 You can use the "-h" option at the same time as the "-l" option to add a unit to the file size. This is useful for checking when the file size is large.
 
 <pre>
 ls -l -h
-</ pre>
+</pre>
 
 or
 
-</ pre>
+</pre>
 ls -lh
-</ pre>
+</pre>
 
 You can also specify multiple options at once.
 
@@ -79,27 +79,27 @@ drwxrwxr-x 7 kimoto kimoto 4.0K Aug 10 15:04 public
 -rw-r--r-- 1 kimoto kimoto 227 Aug 10 15:01 README
 -rw-r--r-- 1 kimoto kimoto 219 Aug 10 15:01 serve.pl
 drwxrwxr-x 5 kimoto kimoto 4.0K Aug 10 15:01 templates
-</ pre>
+</pre>
 
-<h3> Show hidden files "-a" option </ h3>
+<h3> Show hidden files "-a" option </h3>
 
-You can use the "-a" option to display <a href="/blog/20191220091958.html"> hidden files </a> that start with ".".
+You can use the "-a" option to display <a href="/blog/20191220091958.html"> hidden files</a> that start with ".".
 
 <pre>
 ls -a
-</ pre>
+</pre>
 
 This is a sample output result.
 
 <pre>
 .. .convert_markdown.pl giblog.conf .git .gitignore lib public README serve.pl templates
-</ pre>
+</pre>
 
 It can also be used with the "-l" option.
 
 <pre>
 ls -la
-</ pre>
+</pre>
 
 This is a sample output result.
 
@@ -115,19 +115,19 @@ drwxrwxr-x 7 kimoto kimoto 4096 Aug 10 15:04 public
 -rw-r--r-- 1 kimoto kimoto 227 Aug 10 15:01 README
 -rw-r--r-- 1 kimoto kimoto 219 Aug 10 15:01 serve.pl
 drwxrwxr-x 5 kimoto kimoto 4096 Aug 10 15:01 templates
-</ pre>
+</pre>
 
-"." Is the file name that represents <a href="/blog/20191218072611.html"> current directory </a>.
+"." Is the file name that represents <a href="/blog/20191218072611.html"> current directory</a>.
 
-".." is the file name that represents <a href="/blog/20191219082642.html"> parent directory </a>.
+".." is the file name that represents <a href="/blog/20191219082642.html"> parent directory</a>.
 
-<h3> Show help --help option </ h3>
+<h3> Show help --help option </h3>
 
 Use the "--help" option to get help.
 
 <pre>
 ls --help
-</ pre>
+</pre>
 
 Help is displayed.
 
@@ -224,4 +224,4 @@ Mandatory arguments to long options are mandatory for short options too.
   -x list entries by lines instead of by columns
   -X sort alphabetically by entry extension
   -1 list one file per line
-</ pre>
+</pre>

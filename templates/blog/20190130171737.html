@@ -2,23 +2,23 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
+    </li>
+  </ul>
+</div>
 
-<h2> rsync command-sync directories </ h2>
+<h2> rsync command-sync directories </h2>
 
 You can synchronize directories using the rsync command. Synchronization means putting two directories in the same state.
 
@@ -26,14 +26,14 @@ It also includes the ability to copy directories, so the rsync command can also 
 
 rsync will only transfer the diffs. So even in a large directory, only the changes are transferred, which is good performance.
 
-<h3> Synchronize directories using rsync </ h3>
+<h3> Synchronize directories using rsync </h3>
 
 First, I'll show you how to sync directories using rsync. This is surprisingly a songwriter.
 
 <pre>
 #Copy the directory. Synchronize the contents of src_dir into dist_dir
 rsync -av src_dir / dist_dir
-</ pre>
+</pre>
 
 There are many command options in rsync, but first remember only "-a" and "-v".
 
@@ -55,7 +55,7 @@ If the destination directory does not exist, it will be created automatically.
 
 If there is no "/" at the end of the directory name of the synchronization source, it means to synchronize "src_dir" in "dist_dir". "Src_dir" will be created in "dist_dir".
 
-<h3> Synchronize directories between local and remote </ h3>
+<h3> Synchronize directories between local and remote </h3>
 
 rsync supports local and remote synchronization using the SSH protocol, as well as local synchronization. This can be used for backup.
 
@@ -63,25 +63,25 @@ Describe how to specify the user name, host name, and port number. Other than th
 
 <pre>
 rsync -e "ssh -p 55555" -av / foo / src_dir / kimoto@192.168.1.1:/bar/dist_dir
-</ pre>
+</pre>
 
-<h4> Username / hostname format </ h4>
+<h4> Username / hostname format </h4>
 
 Write the remote host in the following format.
 
 <pre>
 Username @hostname: directory
-</ pre>
+</pre>
 
-<h4> Specifying the port number </ h4>
+<h4> Specifying the port number </h4>
 
-Specifying the port number is not an ordinary option and should be included as an option for the ssh command with the <b> -e </ b> option.
+Specifying the port number is not an ordinary option and should be included as an option for the ssh command with the <b> -e </b> option.
 
 <pre>
 -e "ssh -p port number"
-</ pre>
+</pre>
 
-<h3> I want to automate backup operations </ h3>
+<h3> I want to automate backup operations </h3>
 
 If you want to automate the backup operation, create an SSH private key / public key pair on the backup server and use it to connect. With the key, the password is not required, so backup operations can be automated.
 

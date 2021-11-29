@@ -2,22 +2,22 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
-<h2> vi --Text editor for command line </ h2>
+    </li>
+  </ul>
+</div>
+<h2> vi --Text editor for command line </h2>
 
 vi is a text editor that comes with Linux by default and can be run from the command line.
 
@@ -31,79 +31,79 @@ If you're used to a graphical GUI editor, it's probably the first challenge to g
 
 Since you can't use a mouse, you have to do everything with the keyboard, and there's also the concept of edit mode.
 
-<h3> Let's run vi </ h3>
+<h3> Let's run vi </h3>
 
 First, let's run vi with an empty file.
 
-<h4> Creating a text file </ h4>
+<h4> Creating a text file </h4>
 
 To create a text file:
 
 <pre>
 vi text file name
-</ pre>
+</pre>
 
 If you pass the file name as an argument of vi, it will create a new one if the text does not exist. Let's create a file called foo.txt.
 
 <pre>
 vi foo.txt
-</ pre>
+</pre>
 
 I think vi will start up.
 
-<h4> Exit the vi editor </ h4>
+<h4> Exit the vi editor </h4>
 
 I think the problem for beginners here is that they don't know how to quit the vi editor, so let's just remember this. The procedure is as follows.
 
 <pre>
 Press Esc
-</ pre>
+</pre>
 
-Pressing Esc changes vi to a mode called <b> command mode </ b>. vi has two modes, one for editing characters and one for executing commands. To exit the vi editor, first press <b> Esc </ b> and then in command mode. Must be.
+Pressing Esc changes vi to a mode called <b> command mode </b>. vi has two modes, one for editing characters and one for executing commands. To exit the vi editor, first press <b> Esc </b> and then in command mode. Must be.
 
 Then type ": q".
 
 <pre>
 : q
-</ pre>
+</pre>
 
 Type ": q" and press Enter. Exit the vi editor. I am running a command to exit the editor called q. The colon ":" is required before the command.
 
-<h4> Kill without saving </ h4>
+<h4> Kill without saving </h4>
 
-Also remember the command to kill without saving your edits. In the vi editor, if there are changes to the contents of the editor, you cannot exit with the <b> q </ b> command.
+Also remember the command to kill without saving your edits. In the vi editor, if there are changes to the contents of the editor, you cannot exit with the <b> q </b> command.
 
-Use the <b> q! </ B> command to kill without saving. Press Esc to change to command mode, then type the following and press Enter.
+Use the <b> q! </B> command to kill without saving. Press Esc to change to command mode, then type the following and press Enter.
 
 <pre>
 : q!
-</ pre>
+</pre>
 
-<h4> Save edits </ h4>
+<h4> Save edits </h4>
 
-Use the "w" command to save your edits. You can save it by pressing <b> Esc </ b> to enter command mode, then typing ": w" and pressing Enter.
+Use the "w" command to save your edits. You can save it by pressing <b> Esc </b> to enter command mode, then typing ": w" and pressing Enter.
 
 <pre>
 : w
-</ pre>
+</pre>
 
-<h4> Save your edits and exit </ h4>
+<h4> Save your edits and exit </h4>
 
-Save another one and remember the end. Use the <b> wq </ b> command. Press <b> Esc </ b> to enter command mode, then type ": wq" and press Enter to save and exit.
+Save another one and remember the end. Use the <b> wq </b> command. Press <b> Esc </b> to enter command mode, then type ": wq" and press Enter to save and exit.
 
 <pre>
 : wq
-</ pre>
+</pre>
 
 If you remember the three exit methods, you can manage to start vi by mistake.
 
 <ul>
-  <li> q --End </ li>
-  <li> q! --Exit without saving </ li>
-  <li> wq --Save and exit </ li>
-</ ul>
+  <li> q --End </li>
+  <li> q! --Exit without saving </li>
+  <li> wq --Save and exit </li>
+</ul>
 
-<h3> Edit text with vi editor </ h3>
+<h3> Edit text with vi editor </h3>
 
 Let's edit the text using the vi editor. Write the minimum necessary information.
 
@@ -111,26 +111,26 @@ Just like last time, let's start the vi editor first.
 
 <pre>
 vi foo.txt
-</ pre>
+</pre>
 
 It has started.
 
-<h4> Edit mode </ h4>
+<h4> Edit mode </h4>
 
 The vi editor initially starts in command mode. vi has two modes, command mode and edit mode. Initially you are in command mode, so you need to be in edit mode.
-Press <b> i </ b> to enter edit mode.
+Press <b> i </b> to enter edit mode.
 
 <pre>
 i
-</ pre>
+</pre>
 
 You can enter characters in edit mode. Feel free to enter characters such as abc. After pressing i, you will find that you are free to edit.
 
-If you want to save your edits, use the <b> w </ b> command after entering command mode. To enter command mode, I first pressed the Esc key.
+If you want to save your edits, use the <b> w </b> command after entering command mode. To enter command mode, I first pressed the Esc key.
 
 <pre>
 : w
-</ pre>
+</pre>
 
 You can save the text by typing as above and pressing Enter. To edit, press i again to switch to edit mode.
 
@@ -138,15 +138,15 @@ If you want to save and exit, do the following.
 
 <pre>
 : wq
-</ pre>
+</pre>
 
 Now you can edit the configuration file somehow.
 
-<h3> basic vi commands </ h3>
+<h3> basic vi commands </h3>
 
 If you remember the minimum requirements for vi, you will be able to edit the configuration file, so it's a good idea to move on to the next chapter. Here, I would like to introduce a more convenient way to use vi.
 
-<h4> Display line numbers </ h4>
+<h4> Display line numbers </h4>
 
 When you start vi, you will notice that there is no line number. It's inconvenient without the line number. In such a case, do as follows.
 
@@ -154,19 +154,19 @@ First press the Esc key to enter command mode. Then type the following and press
 
 <pre>
 : set number
-</ pre>
+</pre>
 
 The line number will appear on the left.
 
-<h4> vi configuration file </ h4>
+<h4> vi configuration file </h4>
 
-The line number setting is not permanent and only takes effect while you launch vi. If you want to keep the settings, use the <b> configuration file </ b>. If you write it in the configuration file, it will execute the command when you start vi.
+The line number setting is not permanent and only takes effect while you launch vi. If you want to keep the settings, use the <b> configuration file </b>. If you write it in the configuration file, it will execute the command when you start vi.
 
-The vi configuration file is <b> .vimrc </ b> in the user's home directory. Isn't there such a file? It doesn't exist by default, so you need to create it.
+The vi configuration file is <b> .vimrc </b> in the user's home directory. Isn't there such a file? It doesn't exist by default, so you need to create it.
 
 <pre>
 vi ~ / .vimrc
-</ pre>
+</pre>
 
 Let's write the command in this file.
 
@@ -176,63 +176,63 @@ set number
 
 The leading colon is not needed.
 
-You can move to your home directory by typing <b> cd ~ </ b>. Tilde is a special character that means the user's home directory.
+You can move to your home directory by typing <b> cd ~ </b>. Tilde is a special character that means the user's home directory.
 
-Let's use vi to create a <b> .vimrc </ b>. Then press <b> i </ b> and when you're in edit mode, type:
+Let's use vi to create a <b> .vimrc </b>. Then press <b> i </b> and when you're in edit mode, type:
 
 <pre>
 set number
-</ pre>
-When writing to a vi configuration file, the colon is not at the beginning. Write without a colon. Then press Esc to enter command mode, type <b>: wq </ b> to save and exit. Then the file is created.
+</pre>
+When writing to a vi configuration file, the colon is not at the beginning. Write without a colon. Then press Esc to enter command mode, type <b>: wq </b> to save and exit. Then the file is created.
 
-On Linux, files starting with <b>. </ B> are hidden files. Configuration files are often hidden files. The regular <b> ls </ b> command doesn't list it in the file, but you can use the <b> a </ b> option to see it, including hidden files.
+On Linux, files starting with <b>. </B> are hidden files. Configuration files are often hidden files. The regular <b> ls </b> command doesn't list it in the file, but you can use the <b> a </b> option to see it, including hidden files.
 
 <pre>
 ls -a
-</ pre>
+</pre>
 
 Now you can see that you have a file called .vimrc. Let's open a text file with vi. You can see that the line numbers are displayed from the beginning.
 
-<h4> I want to enter a blank in the tab </ h4>
+<h4> I want to enter a blank in the tab </h4>
 
 Many programmers want to type blank with the tab key instead of the tab.
 
 <pre>
 : set expandtab
-</ pre>
+</pre>
 
-<h4> I want to set the tab width </ h4>
+<h4> I want to set the tab width </h4>
 
 If you are a programmer, you also want to set the tab width.
 
 <pre>
 : set tabstop = 2
-</ pre>
+</pre>
 
-<h4> I want to indent when a line breaks </ h4>
+<h4> I want to indent when a line breaks </h4>
 
 If you are a programmer, you want to indent instead of returning to the beginning when you start a new line.
 
 <pre>
 : set autoindent
-</ pre>
+</pre>
 
-<h4> The configuration file is large, so I want to move it to the end of the file </ h4>
+<h4> The configuration file is large, so I want to move it to the end of the file </h4>
 
-If you want to move to the end, type <b> G </ b> in command mode.
+If you want to move to the end, type <b> G </b> in command mode.
 
 <pre>
 : G
-</ pre>
+</pre>
 
-<h4> I want to move to my favorite line number </ h4>
+<h4> I want to move to my favorite line number </h4>
 
-If you want to move to your favorite line number, use <b> number G </ b>.
+If you want to move to your favorite line number, use <b> number G </b>.
 
 <pre>
 1G
 : 25G
-</ pre>
+</pre>
 
 If it is 1G, you can move to the 1st line, and if it is 25G, you can move to the 25th line.
 
@@ -240,79 +240,79 @@ You can move by just typing the line number in command mode with the Esc key.
 
 <pre>
 : 3
-</ pre>
+</pre>
 
-<h4> I want to search for a character string </ h4>
+<h4> I want to search for a character string </h4>
 
-If you want to search, first type <b> / </ b> in command mode. Hit the slash. Then it will be as follows.
+If you want to search, first type <b> / </b> in command mode. Hit the slash. Then it will be as follows.
 
 <pre>
 / /
-</ pre>
+</pre>
 Then type in the characters you want to search for here.
 
 <pre>
 / foo
-</ pre>
+</pre>
 
-Then press Enter. You can now search. Press <b> n </ b> to move to the next matched position. Press <b> N </ b> to return. You can now search.
+Then press Enter. You can now search. Press <b> n </b> to move to the next matched position. Press <b> N </b> to return. You can now search.
 
 <ul>
-  <li> n --Forward </ li>
-  <li> N-Forward </ li>
-</ pre>
+  <li> n --Forward </li>
+  <li> N-Forward </li>
+</pre>
 
-<h4> I want to copy </ h4>
+<h4> I want to copy </h4>
 
 You can copy by left-clicking and selecting a range.
 
-<h4> I want to paste </ h4>
+<h4> I want to paste </h4>
 
 You can paste with the right click. This may have different settings depending on the environment.
 
-<h4> I want to delete a lot of ranges </ h4>
+<h4> I want to delete a lot of ranges </h4>
 
 You can also delete it with delete or backspace, but sometimes you want to delete a lot of ranges at once. To delete one line, type the following in command mode.
 
 <pre>
 dd
-</ pre>
+</pre>
 
 If you want to delete multiple lines, just before this, describe the number of lines you want to delete.
 
 <pre>
 5dd
-</ pre>
+</pre>
 
-<h4> Move up / down / left / right </ h4>
+<h4> Move up / down / left / right </h4>
 
 You can also use the arrow keys to move up / down / left / right, but you can also use the Esc key to switch to command mode and then use the next key to move up / down / left / right.I can do it.
 
 <ul>
-   <li> k --above </ li>
-   <li> h --left </ li>
-   <li> j --below </ li>
-   <li> k --above </ li>
-</ ul>
+   <li> k --above </li>
+   <li> h --left </li>
+   <li> j --below </li>
+   <li> k --above </li>
+</ul>
 
-<h4> Advance one character to edit mode </ h4>
+<h4> Advance one character to edit mode </h4>
 
 You can use "i" to enter edit mode, but you can use "a" to advance one character to edit mode.
 
-<h4> Move to the end </ h4>
+<h4> Move to the end </h4>
 
 You can move to the end of the line with "$" in command mode.
 
-<h4> Undo </ h4>
+<h4> Undo </h4>
 
 You can undo your work by running "u" in command mode.
 
-<h4> I want to run Perl </ h4>
+<h4> I want to run Perl </h4>
 
 In command mode, you can execute any Linux command by prefixing it with "!". When running Perl, do the following:
 
 <pre>
 ! perl script name
-</ pre>
+</pre>
 
 If you remember this much, you will find it much easier to edit the configuration file.

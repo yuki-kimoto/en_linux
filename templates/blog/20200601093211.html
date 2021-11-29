@@ -2,29 +2,29 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
+    </li>
+  </ul>
+</div>
 
-<h2> df command --check disk capacity </ h2>
+<h2> df command --check disk capacity </h2>
 
 You can check the disk capacity with the df command.
 
 <pre>
 df
-</ pre>
+</pre>
 
 This is a sample output result. The capacity is displayed in 1 Kbyte units for each disk.
 
@@ -41,19 +41,19 @@ tmpfs 4062840 0 4062840 0% / sys / fs / cgroup
 / dev / sdc1 1055838644 77852 1002057420 1% / datadrive
 / dev / sdb1 16447292 45084 15547020 1% / mnt
 tmpfs 812568 0 812568 0% / run / user / 1001
-</ pre>
+</pre>
 
 "/ Dev / sda1", "/ dev / sda15", "/ dev / sdc1", and "/ dev / sdb1" are logical disks separated by partitions. The file system is mounted on this.
 
 The disk capacity displayed by df is not for the physical disk, but for the partition (logical disk) set on the physical disk.
 
-<h3> To display in an easy-to-understand manner with units </ h3>
+<h3> To display in an easy-to-understand manner with units </h3>
 
 Use the "-h" option to clearly display the units of the df command.
 
 <pre>
 df -h
-</ pre>
+</pre>
 
 The output result has a unit.
 
@@ -69,14 +69,14 @@ tmpfs 3.9G 0 3.9G 0% / sys / fs / cgroup
 / dev / sdc1 1007G 77M 956G 1% / datadrive
 / dev / sdb1 16G 45M 15G 1% / mnt
 tmpfs 794M 0 794M 0% / run / user / 1001
-</ pre>
+</pre>
 
-<h3> How to check the capacity of the directory? </ H3>
+<h3> How to check the capacity of the directory? </H3>
 
 Use the du command to check the capacity of the directory.
 
 Note that the df command is a command to check the disk capacity, and the du command is used to check the directory capacity.
 
 <ul>
-  <li> <a href="/blog/20200531082545.html"> du command --check directory capacity </a> </ li>
-</ ul>
+  <li> <a href="/blog/20200531082545.html"> du command --check directory capacity</a> </li>
+</ul>

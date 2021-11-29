@@ -2,42 +2,42 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
-<h2> cp command-copy files </ h2>
+    </li>
+  </ul>
+</div>
+<h2> cp command-copy files </h2>
 
 You can copy the file using the cp command. The file contents of the original file name are copied with the new file name. The name of cp comes from copy.
 
 <pre>
 cp original file name new file name
-</ pre>
+</pre>
 
 This is a sample to copy a file with the cp command. The contents of foo.txt will be copied to bar.txt.
 
 <pre>
 cp foo.txt bar.txt
-</ pre>
+</pre>
 
-<h3> Copy directory --- "-r" option of cp command </ h3>
+<h3> Copy directory --- "-r" option of cp command </h3>
 
 Use the "-r" option to copy the directory. r comes from recursive.
 
 <pre>
 cp -r original directory name new directory name
-</ pre>
+</pre>
 
 The process of copying a directory is actually the process of recursively copying files.
 
@@ -45,11 +45,11 @@ This is a sample to copy a directory with "cp -r". All files contained in dir1 w
 
 <pre>
 cp -r dir1 dir2
-</ pre>
+</pre>
 
-<h3> Copy all files in the directory </ h3>
+<h3> Copy all files in the directory </h3>
 
-Use <a href="/blog/20200609092705.html"> wildcards </a> to copy all the files contained in the directory.
+Use <a href="/blog/20200609092705.html"> wildcards</a> to copy all the files contained in the directory.
 
 The following example means move all the files in the foo directory into the bar. Notice the "bar /" part.
 
@@ -57,15 +57,15 @@ Also note that hidden files are not included.
 
 <pre>
 cp foo / * bar /
-</ pre>
+</pre>
 
-<h3> Show help --help option </ h3>
+<h3> Show help --help option </h3>
 
 Use the "--help" option to get help.
 
 <pre>
 cp --help
-</ pre>
+</pre>
 
 Help is displayed.
 
@@ -114,4 +114,4 @@ Mandatory arguments to long options are mandatory for short options too.
   -Z, --context = CONTEXT set security context of copy to CONTEXT
       --help display this help and exit
       --version output version information and exit
-</ pre>
+</pre>

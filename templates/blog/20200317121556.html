@@ -2,35 +2,35 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
+    </li>
+  </ul>
+</div>
 
-<h2> find command-recursive search of directories </ h2>
+<h2> find command-recursive search of directories </h2>
 
 You can use the find command to perform a recursive search for a directory.
 
 <pre>
 find directory name
-</ pre>
+</pre>
 
 This is a sample to search under "/ usr / local / lib".
 
 <pre>
 find / usr / local / lib
-</ pre>
+</pre>
 
 This is a sample output result.
 
@@ -48,72 +48,72 @@ This is a sample output result.
 /usr/local/lib/libtesseract.a
 / usr / local / lib / pkgconfig
 /usr/local/lib/pkgconfig/tesseract.pc
-</ pre>
+</pre>
 
-<h3> Narrow down the contents of the find command </ h3>
+<h3> Narrow down the contents of the find command </h3>
 
-When combined with the <a href="/blog/20200602093211.html"> grep </a> command, you can narrow down the content of the find command.
+When combined with the <a href="/blog/20200602093211.html"> grep</a> command, you can narrow down the content of the find command.
 
 <pre>
 find / usr / local / lib | grep pkg
-</ pre>
+</pre>
 
 This is a sample output result.
 
 <pre>
 / usr / local / lib / pkgconfig
 /usr/local/lib/pkgconfig/tesseract.pc
-</ pre>
+</pre>
 
-<h3> Specify the current directory that does not contain hidden files </ h3>
+<h3> Specify the current directory that does not contain hidden files </h3>
 
-If you currently have a hidden directory such as ".git" used by <a href="https://git.perlclub.net/"> Git </a> in your directory and you don't want to include it, you can use the wildcard "*". Is convenient to use. This applies to files other than hidden files in the current directory.
+If you currently have a hidden directory such as ".git" used by <a href="https://git.perlclub.net/"> Git</a> in your directory and you don't want to include it, you can use the wildcard "*". Is convenient to use. This applies to files other than hidden files in the current directory.
 
 <pre>
 find *
-</ pre>
+</pre>
 
-<h3> Specify the file type </ h3>
+<h3> Specify the file type </h3>
 
 With the find command, you can specify the file type, such as a directory or regular file, with the "-type" option.
 
-<h4> Normal file </ h4>
+<h4> Normal file </h4>
 
 With f specified, only normal files that do not contain directories or symbolic links are fetched.
 
 <pre>
 find -type f filename
-</ pre>
+</pre>
 
-<h4> Directory files </ h4>
+<h4> Directory files </h4>
 
 With d specified, only the directory is fetched.
 
 <pre>
 find -type d filename
-</ pre>
+</pre>
 
-<h4> List of types </ h4>
+<h4> List of types </h4>
 
 A list of file types specified by type.
 
 <table>
-  <tr> <th> b </ th> <td> block (buffer) special </ td> </ tr>
-  <tr> <th> c </ th> <td> characters (no buffer) special </ td> </ tr>
-  <tr> <th> d </ th> <td> directory </ td> </ tr>
-  <tr> <th> p </ th> <td> Named Pipe (FIFO) </ td> </ tr>
-  <tr> <th> f </ th> <td> Normal file </ td> </ tr>
-  <tr> <th> l </ th> <td> Symbolic links; this is never the case with the -L option or -follow
+  <tr> <th> b </th> <td> block (buffer) special </td> </tr>
+  <tr> <th> c </th> <td> characters (no buffer) special </td> </tr>
+  <tr> <th> d </th> <td> directory </td> </tr>
+  <tr> <th> p </th> <td> Named Pipe (FIFO) </td> </tr>
+  <tr> <th> f </th> <td> Normal file </td> </tr>
+  <tr> <th> l </th> <td> Symbolic links; this is never the case with the -L option or -follow
             The option is valid as long as the symbolic link is not broken. If you
             Search for symbolic links when -L is enabled
-            -xtype. </ td> </ tr>
-  <tr> <th> s </ th> <td> socket </ td> </ tr>
-</ table>
+            -xtype. </td> </tr>
+  <tr> <th> s </th> <td> socket </td> </tr>
+</table>
 
-<h4> Narrow down to executable files only </ h4>
+<h4> Narrow down to executable files only </h4>
 
 To narrow down to only executable files, specify "-executable" in addition to f specification.
 
 <pre>
 find -executable -type f filename
-</ pre>
+</pre>

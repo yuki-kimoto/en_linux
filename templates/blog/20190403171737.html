@@ -1,16 +1,16 @@
-<h2> Learn basic Linux commands Part 2 </ h2>
+<h2> Learn basic Linux commands Part 2 </h2>
 
 
 
 Now, let's learn more and more commands that will be useful when working.
 
-<h3> String search grep </ h3>
+<h3> String search grep </h3>
 
 The grep command is one of the most frequently used commands. grep will display the line if the text file contains the specified string.
 
 <pre>
 grep string text file
-</ pre>
+</pre>
 
 For example, let's say the text file (foo.txt) looks like the following.
 
@@ -19,30 +19,30 @@ cat is animal
 dog is animal
 mouse is animal
 It's cat.
-</ pre>
+</pre>
 
 If you want to extract the line containing cat from this text file, write as follows.
 
 <pre>
 grep cat foo.txt
-</ pre>
+</pre>
 
 The output result is as follows.
 
 <pre>
 cat is animal
 It's cat.
-</ pre>
+</pre>
 
-<h4> Combine with other commands </ h4>
+<h4> Combine with other commands </h4>
 
 Grep is very convenient when combined with other commands. For example, let's combine it with the ls command.
 
 <pre>
 ls | grep log
-</ pre>
+</pre>
 
-Ls is a command to display a list of files. And the following <b> | </ b> is called a pipe, which allows you to pass the output of ls to the input of the next command.
+Ls is a command to display a list of files. And the following <b> | </b> is called a pipe, which allows you to pass the output of ls to the input of the next command.
 
 By executing the above command, only the files containing the file name log can be extracted from the file list.
 
@@ -52,30 +52,30 @@ If you specify a character string that includes spaces, enclose the character st
 
 <pre>
 grep "cat is" foo.txt
-</ pre>
+</pre>
 
-<h4> Use regular expressions </ h4>
+<h4> Use regular expressions </h4>
 
 In grep, you can specify a regular expression as an extraction condition.
 
 <pre>
 grep "^ cat" foo.txt
-</ pre>
+</pre>
 
 On the contrary, when searching by character string, the "-F" option can be used.
 
 <pre>
 grep "cat" foo.txt
-</ pre>
+</pre>
 
 
-<h4> Search from all subdirectories </ h4>
+<h4> Search from all subdirectories </h4>
 
-Grep has a very useful function. It is a function that searches recursively including subdirectories. Use the <b> r </ b> option.
+Grep has a very useful function. It is a function that searches recursively including subdirectories. Use the <b> r </b> option.
 
 <pre>
 grep -r cat dir1
-</ pre>
+</pre>
 
 The line containing cat is displayed from the text files contained under the directory dir1.
 
@@ -83,15 +83,15 @@ It is also possible to specify multiple directories as shown below.
 
 <pre>
 grep -r cat dir1 dir2
-</ pre>
+</pre>
 
-<h3> View environment variables </ h3>
+<h3> View environment variables </h3>
 
-Use <b> env </ b> to see the environment variables.
+Use <b> env </b> to see the environment variables.
 
 <pre>
 env
-</ pre>
+</pre>
 
 Environment variables are variables for storing settings used in applications.
 
@@ -100,68 +100,68 @@ HOSTNAME = www345u.sakura.ne.jp
 SHELL = / bin / bash
 OLDPWD = / home / kimoto / labo
 USER = kimoto
-</ pre>
+</pre>
 
-<h4> Environment variable settings env </ h4>
+<h4> Environment variable settings env </h4>
 
 To set environment variables, do the following.
 
 <pre>
 export APP_NAME = myapp
-</ pre>
+</pre>
 
 Environment variables are generally uppercase. You can give it any name you like. The environment variables you set are valid only in the current shell. In other words, once you log out or quit the terminal, the settings will disappear.
 
-If you want to set environment variables as the default settings, you need to define them in the shell configuration file. The shell config file is <b> .bashrc </ b> in your home directory.
+If you want to set environment variables as the default settings, you need to define them in the shell configuration file. The shell config file is <b> .bashrc </b> in your home directory.
 
 <pre>
 vi ~ / .bashrc
-</ pre>
+</pre>
 
 Environment variable settings and commands can be described in this configuration file.
 
-<h3> Check the command path which </ h3>
+<h3> Check the command path which </h3>
 
-Use <b> which </ b> to find out the command path. For example, the command perl can tell you what you're actually doing.
+Use <b> which </b> to find out the command path. For example, the command perl can tell you what you're actually doing.
 
 <pre>
 which perl
-</ pre>
+</pre>
 
 Then, the path of the application that is actually running will be displayed as shown below.
 
 <pre>
 ~ / perl5 / perlbrew / perls / perl-5.14.2 / bin / perl
-</ pre>
+</pre>
 
-<h3> Output the contents of the file </ h3>
+<h3> Output the contents of the file </h3>
 
-Use <b> cat </ b> to output the contents of the file.
+Use <b> cat </b> to output the contents of the file.
 
 <pre>
 cat file
-</ pre>
+</pre>
 
-<h3> View text file from the beginning more </ h3>
+<h3> View text file from the beginning more </h3>
 
-Use <b> more </ b> if you want to see only the beginning of the text file.
+Use <b> more </b> if you want to see only the beginning of the text file.
 
 <pre>
 more text file
-</ pre>
+</pre>
 
-Press Enter to advance the page. Press <b> q </ b> when you want to finish.
+Press Enter to advance the page. Press <b> q </b> when you want to finish.
 
-<h3> See the end of the text file tail </ h3>
+<h3> See the end of the text file tail </h3>
 
-Use <b> tail </ b> to see the end of the text file.
+Use <b> tail </b> to see the end of the text file.
 
 <pre>
 tail text file
-</ pre>
+</pre>
 
-There is a convenient option in tail, which has a <b> f </ b> option that monitors the file and keeps displaying it if a string is added to the end of the file. Useful for monitoring logs.
+There is a convenient option in tail, which has a <b> f </b> option that monitors the file and keeps displaying it if a string is added to the end of the file. Useful for monitoring logs.
 
 <pre>
 tail -f developmen.log
-</ pre>
+</pre>

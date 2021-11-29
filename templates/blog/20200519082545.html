@@ -2,28 +2,28 @@
   <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop = "name"> Linux </ span>
-      </a>
+        <span itemprop = "name"> Linux </span>
+     </a>
       <meta itemprop = "position" content = "1" />
-    </ li>
+    </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop = "name"> Linux command </ span>
-      </a>
+        <span itemprop = "name"> Linux command </span>
+     </a>
       <meta itemprop = "position" content = "2" />
-    </ li>
+    </li>
     <li>
       here
-    </ li>
-  </ ul>
-</ div>
-<h2> chmod command-change permissions </ h2>
+    </li>
+  </ul>
+</div>
+<h2> chmod command-change permissions </h2>
 
-You can change the <a href="/blog/20200526082545.html"> permissions </a> using the <b> chmod command </ b>.
+You can change the <a href="/blog/20200526082545.html"> permissions</a> using the <b> chmod command </b>.
 
 <pre>
 Representation of chmod permissions File name
-</ pre>
+</pre>
 
 Some representations of permissions allow you to add permissions by delta, such as octal and "+ x".
 
@@ -36,9 +36,9 @@ chmod 755 dir1
 
 # Add execute permission
 chmod + x myapp
-</ pre>
+</pre>
 
-<h3> Recursively change permissions </ h3>
+<h3> Recursively change permissions </h3>
 
 There is a "-R" option to change permissions recursively.
 
@@ -46,10 +46,10 @@ There is "-R", but the permissions you want to set for directories, normal files
 
 You may also want to give execute permission only to a specific extension.
 
-In such a case, combine the <a href="/blog/20200317121556.html"> find </a> command, the <a href="/blog/20200602093211.html"> grep </a> command, and the xargs command. Let's narrow down to the target file and change the permissions.
+In such a case, combine the <a href="/blog/20200317121556.html"> find</a> command, the <a href="/blog/20200602093211.html"> grep</a> command, and the xargs command. Let's narrow down to the target file and change the permissions.
 
 For example, if you want to give execute permission only to the ".pl" file under the current directory, do as follows.
 
 <pre>
 find * | grep -P'\ .pl $'| xargs chmod + x
-</ pre>
+</pre>

@@ -1,6 +1,6 @@
-<h2> What is a relative path? </ H2>
+<h2> What is a relative path? </H2>
 
-A relative path is a relative path starting from <a href="/blog/20191218072611.html"> current directory </a>. The word path contains both the file name and the directory name.
+A relative path is a relative path starting from <a href="/blog/20191218072611.html"> current directory</a>. The word path contains both the file name and the directory name.
 
 <pre>
 #Relative path
@@ -11,19 +11,19 @@ foo / bar / baz
 foo.txt
 foo / bar.pl
 foo / bar / baz.tar.gz
-</ pre>
+</pre>
 
-Linux recognizes paths that do not start with "/" as relative paths. Note that unlike <a href="/blog/20191217081903.html"> absolute path </a>, it does not start with a "/".
+Linux recognizes paths that do not start with "/" as relative paths. Note that unlike <a href="/blog/20191217081903.html"> absolute path</a>, it does not start with a "/".
 
-<h3> Sample using relative path </ h3>
+<h3> Sample using relative path </h3>
 
-<h4> Use relative path with cd command </ h4>
+<h4> Use relative path with cd command </h4>
 
-This is a sample that uses a relative path in the <a href="/blog/20191012191854.html"> cd command </a>.
+This is a sample that uses a relative path in the <a href="/blog/20191012191854.html"> cd command</a>.
 
 <pre>
 cd foo / bar
-</ pre>
+</pre>
 
 If the current directory is "/ home / kimoto", change the current directory to "/ home / kimoto / foo / bar".
 
@@ -31,28 +31,28 @@ If the current directory is "/ home / kimoto / labo", change the current directo
 
 Notice that the relative path is relative to the current directory.
 
-<h4> Use relative path with ls command </ h4>
+<h4> Use relative path with ls command </h4>
 
-This is a sample that uses a relative path in the <a href="/blog/20191126082723.html"> ls command </a>.
+This is a sample that uses a relative path in the <a href="/blog/20191126082723.html"> ls command</a>.
 
 <pre>
 ls foo / bar
-</ pre>
+</pre>
 
 If the current directory is "/ home / kimoto", a list of files existing in "/ home / kimoto / foo / bar" will be displayed.
 
 If the current directory is "/ home / kimoto / labo", a list of files existing in "/ home / kimoto / labo / foo / bar" will be displayed.
 
-<h4> Use relative paths in other commands </ h4>
+<h4> Use relative paths in other commands </h4>
 
-<a href="/blog/20191205081119.html"> touch command </a>, <a href="/blog/20191211133524.html"> mkdir command </a>, <a href="/blog/20191212134646. All Linux commands, such as the html "> rmdir command </a> and <a href="/blog/20191210081417.html"> rm command </a>, can use relative paths.
+<a href="/blog/20191205081119.html"> touch command</a>, <a href="/blog/20191211133524.html"> mkdir command</a>, <a href="/blog/20191212134646. All Linux commands, such as the html "> rmdir command</a> and <a href="/blog/20191210081417.html"> rm command</a>, can use relative paths.
 
 <pre>
 touch foo / bar
 mkdir foo / bar
 rmdir foo / bar
 rm foo / bar
-</ pre>
+</pre>
 
 
 All Linux commands are designed to recognize relative paths.

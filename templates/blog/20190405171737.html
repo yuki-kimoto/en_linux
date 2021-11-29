@@ -1,4 +1,4 @@
-<h2> Linux basic knowledge 1 </ h2>
+<h2> Linux basic knowledge 1 </h2>
 
 
 
@@ -10,80 +10,80 @@ You can think of a distribution as something that can be distributed by adding f
 CentOS | Ubuntu
 --------------------
   Linu kernel
-</ pre>
+</pre>
 The Linux kernel is the core part of Linux, and there are Linux distributions with additional functions on it. There are Linux distributions such as CentOS and Ubuntu.
 
-<h3> File owner </ h3>
+<h3> File owner </h3>
 
 Let's display the file in detail with ls as follows.
 
 <pre>
 ls -l
-</ pre>
+</pre>
 Then, it will be displayed as follows.
 
 <pre>
 -rw-rw-r-- 1 kimoto project 588 June 16 13:19 README
 drwxrwxr-x 3 kimoto project 4096 June 16 16:39 lib
-</ pre>
+</pre>
 
-<B> kimoto </ b> represents the owner of the file. In other words, the file called README is considered to be owned by user kimoto.
+<B> kimoto </b> represents the owner of the file. In other words, the file called README is considered to be owned by user kimoto.
 
-<B> project </ b> represents the group that owns the file. In other words, the file called README is considered to be owned by the group project. The group name will be the same as the user name, especially if it does not belong to a group. The display will be as follows.
+<B> project </b> represents the group that owns the file. In other words, the file called README is considered to be owned by the group project. The group name will be the same as the user name, especially if it does not belong to a group. The display will be as follows.
 
 <pre>
 -rw-rw-r-- 1 kimoto kimoto 588 June 16 13:19 README
-</ pre>
+</pre>
 
-<h3> Add user </ h3>
+<h3> Add user </h3>
 
 Here, I will explain how to add a user again. You must have root privileges to add users. So let's work as root.
 
 <pre>
 su ---
-</ pre>
+</pre>
 
-Use the <b> useradd </ b> command to add a user.
+Use the <b> useradd </b> command to add a user.
 
 <pre>
 useradd ken
-</ pre>
+</pre>
 
-After adding a user, set a password as well. Use the <b> passwd </ b> command.
+After adding a user, set a password as well. Use the <b> passwd </b> command.
 
 <pre>
 passwd ken
-</ pre>
+</pre>
 
 You will be asked to enter the password and re-enter it for confirmation, so set it.
 
-You can check the list of users by looking at the <b> / etc / passwd </ b> file.
+You can check the list of users by looking at the <b> / etc / passwd </b> file.
 
 <pre>
 cat / etc / passwd
-</ pre>
+</pre>
 
-<h3> Create group </ h3>
+<h3> Create group </h3>
 
-You can also create a group with any name. Use <b> groupadd </ b> to create a group.
+You can also create a group with any name. Use <b> groupadd </b> to create a group.
 
 <pre>
 groupadd someproject
-</ pre>
+</pre>
 
 Users can belong to a group. To add a ken to the someproject group:
 
-You can check the created group in the configuration file <b> / etc / group </ b>.
+You can check the created group in the configuration file <b> / etc / group </b>.
 
 <pre>
 cat / etc / group
-</ pre>
+</pre>
 
-Let's make the user owned by the group. Use <b> usermod </ b>. You can add users to the group with the <b> G </ b> option.
+Let's make the user owned by the group. Use <b> usermod </b>. You can add users to the group with the <b> G </b> option.
 
 <pre>
 usermod -G someproject ken
-</ pre>
+</pre>
 Now user ken belongs to the group someproject.
 
 Users can belong to multiple groups, and multiple users can belong to a group.

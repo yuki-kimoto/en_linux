@@ -1,31 +1,31 @@
-<h2> Sending commands to Linux server using TeraTerm </ h2>
+<h2> Sending commands to Linux server using TeraTerm </h2>
 
 Let's connect to a Linux server using TeraTerm. To connect to a Linux server, you use a kind of application called SSH client, but TeraTerm is one of the SSH clients.
 
-<h3> Download TeraTerm </ h3>
+<h3> Download TeraTerm </h3>
 
 Download TeraTerm.
 
-<a href="https://forest.watch.impress.co.jp/library/software/utf8teraterm/"> Download TeraTerm </a>
+<a href="https://forest.watch.impress.co.jp/library/software/utf8teraterm/"> Download TeraTerm</a>
 
-<h3> Install TeraTerm </ h3>
+<h3> Install TeraTerm </h3>
 
 Let's install TeraTerm using the installer.
 
 It is okay to proceed as it is, but if you check only Associate "ttl" with TeraTerm macro, you can execute TeraTerm macro.
 
-<h3> Information required for SSH connection </ h3>
+<h3> Information required for SSH connection </h3>
 
 The information required for SSH connection is as follows. Get the following information on your Linux server: The port number is 22 unless otherwise specified. The SSH port number is 22 unless otherwise specified, but it is highly recommended to set the server's SSH port to something other than port 22 to prevent intrusion into the server.
 
 <ul>
-  <li> IP address (eg 59.106.185.121) </ li>
-  <li> Port number (default is 22) </ li>
-  <li> Username (such as myapp) </ li>
-  <li> password </ li>
-</ ul>
+  <li> IP address (eg 59.106.185.121) </li>
+  <li> Port number (default is 22) </li>
+  <li> Username (such as myapp) </li>
+  <li> password </li>
+</ul>
 
-<h3> Connection with TeraTerm </ h3>
+<h3> Connection with TeraTerm </h3>
 
 Open TeraTerm. Enter the IP address in the host part.
 
@@ -41,9 +41,9 @@ Let's execute one command. Let's see all the files in our home directory.
 
 <pre>
 ls -a
-</ pre>
+</pre>
 
-<h3> TeraTerm macro </ h3>
+<h3> TeraTerm macro </h3>
 
 It's a hassle to enter a connection every time. TeraTerm has a mechanism called TeraTerm macro that can automate connection processing etc. as a script.
 
@@ -51,7 +51,7 @@ This is a sample TeraTerm macro that connects to a Linux server. The name should
 
 <pre>
 connect '59.106.185.121: 22 / ssh / 2 / auth = password / user = myapp / passwd = gudyfuie & A'
-</ pre>
+</pre>
 
 Let's set the extension display setting of Windows to display.
 

@@ -1,88 +1,88 @@
-<h2> Introduction to bash </ h2>
+<h2> Introduction to bash </h2>
 
-bash is a standard Linux shell. You can use bash to execute <a href="/blog/20200211081227.html"> Linux commands </a>.
+bash is a standard Linux shell. You can use bash to execute <a href="/blog/20200211081227.html"> Linux commands</a>.
 
 <pre>
 Execute Linux command with # bash
 ls
-</ pre>
+</pre>
 
-<h3> Check environment variables </ h3>
+<h3> Check environment variables </h3>
 
 Let's check the environment variables. You can check it with the env command.
 
 <pre>
 env
-</ pre>
+</pre>
 
 When combined with grep, you can retrieve only the environment variables you need.
 
 <pre>
 Get only those that contain #MOJO
 env | grep MOJO
-</ pre>
+</pre>
 
-<h3> Set environment variables </ h3>
+<h3> Set environment variables </h3>
 
 Use the export command to set environment variables.
 
 <pre>
 export environment variable name = value of environment variable
-</ pre>
+</pre>
 
-Below is the <a href="https://en.webapp.perlzemi.com/"> Mojolicious </a> development server <a href="https://perlzemi.com/blog/20120406133367.html"> This is a sample to change the port number with morbo </a>.
+Below is the <a href="https://en.webapp.perlzemi.com/"> Mojolicious</a> development server <a href="https://perlzemi.com/blog/20120406133367.html"> This is a sample to change the port number with morbo</a>.
 
 <pre>
 export MOJO_LISTEN = http: // *: 3050
-</ pre>
+</pre>
 
-<h3> bash configuration file </ h3>
+<h3> bash configuration file </h3>
 
 The bash configuration file is ".bashrc" in your home directory.
 
 <pre>
 ~ / .bashrc
-</ pre>
+</pre>
 
 There is also a special config file called ".bash_profile", but use ".bashrc" for normal configs.
 
 If you write the above environment variable settings in ".bashrc", they can be set automatically when the shell is loaded.
 
-<h3> bash shell script </ h3>
+<h3> bash shell script </h3>
 
 Let's create a bash shell script. This is useful when executing frequently used Linux commands.
 
-Suppose you save the following script as "setup.sh". This is also a sample to install all dependent modules with <a href="https://perlzemi.com/blog/20101027127859.html"> cpanm and cpanfile </a>.
+Suppose you save the following script as "setup.sh". This is also a sample to install all dependent modules with <a href="https://perlzemi.com/blog/20101027127859.html"> cpanm and cpanfile</a>.
 
 <pre>
 #! / bin / sh
 
 cpanm --installdeps.
-</ pre>
+</pre>
 
 Save this script and change the permissions to 755 with the chmod command so you can run it
 
 <pre>
 chmod 755 setup.sh
-</ pre>
+</pre>
 
 execution
 
 <pre>
 ./setup.sh
-</ pre>
+</pre>
 
-<h4> Shebang </ h4>
+<h4> Shebang </h4>
 
 Shebang is "#! / Bin / sh". On Linux sh is aliased to bash.
 
-<h3> What kind of shell scripts are there? </ H3>
+<h3> What kind of shell scripts are there? </H3>
 
 Bash is the standard shell script on Linux, but there are other shell scripts such as csh, ksh, and zsh.
 
 Shell scripts are like dialects, and each Linux OS has a different standard shell.
 
-<h3> How should I use shell scripts and Perl properly? </ H3>
+<h3> How should I use shell scripts and Perl properly? </H3>
 
 A shell script is a mechanism that automates the shell, and Linux commands can be used as they are.
 
@@ -99,4 +99,4 @@ For those who maintain it later, don't forget the following description.
 <pre>
 use strict;
 use warnings;
-</ pre>
+</pre>

@@ -1,86 +1,86 @@
-<h2> Learn basic Linux commands Part 3 </ h2>
+<h2> Learn basic Linux commands Part 3 </h2>
 
 
 Let's remember the necessary commands a little more. I wonder if it will end this time.
 
-<h3> Delete files rm </ h3>
+<h3> Delete files rm </h3>
 
-Use <b> rm </ b> to delete the file.
+Use <b> rm </b> to delete the file.
 
 <pre>
 rm file name
-</ pre>
+</pre>
 
-You can use the <b> f </ b> option to delete a file without confirming the deletion. "
+You can use the <b> f </b> option to delete a file without confirming the deletion. "
 
 <pre>
 rm -f filename
-</ pre>
+</pre>
 
 Please use rm with caution. Be very nervous when deleting files with the rm command. Once you delete an important file, it cannot be restored. It is better not to hit it with an easy feeling, and I think it is better to check it about 3 times and do it with excitement.
 
-<h3> Creating a directory mkdir </ h3>
+<h3> Creating a directory mkdir </h3>
 
-Use <b> mkdir </ b> to create a directory.
+Use <b> mkdir </b> to create a directory.
 
 <pre>
 mkdir dir1
-</ pre>
+</pre>
 
-<h4> Creating a multi-level directory </ h4>
+<h4> Creating a multi-level directory </h4>
 
-You can use the <b> p </ b> option to create multiple levels of directories at once.
+You can use the <b> p </b> option to create multiple levels of directories at once.
 <pre>
 mkdir -p dir1 / dir2
-</ pre>
+</pre>
 
-<h3> Delete directory rmdir </ h3>
+<h3> Delete directory rmdir </h3>
 
-Use <b> rmdir </ b> to delete the directory.
+Use <b> rmdir </b> to delete the directory.
 
 <pre>
 rmdir directory name
-</ pre>
+</pre>
 Rmdir will succeed only if the directory is empty.
 
-Use the <b> r </ b> option of the rm command to delete the contents of the directory as well.
+Use the <b> r </b> option of the rm command to delete the contents of the directory as well.
 
 <pre>
 rm -r directory name
-</ pre>
-To delete without inquiring whether to delete, use the <b> f </ b> option in combination.
+</pre>
+To delete without inquiring whether to delete, use the <b> f </b> option in combination.
 
 <pre>
 rm -rf directory name
-</ pre>
+</pre>
 
 Please do this very carefully as well. It's a command that system administrators need to be prepared to type, as the contents of the directory will be messed up.
 
-<h3> Shut down the system shutdown </ h3>
+<h3> Shut down the system shutdown </h3>
 
-Use <b> shutdown </ b> to shut down the system.
+Use <b> shutdown </b> to shut down the system.
 
 <pre>
 shutdown -h now
-</ pre>
+</pre>
 
-The <b> -h </ b> option is an option for shutting down the system. If you specify <b> now </ b>, the shutdown will start immediately.
+The <b> -h </b> option is an option for shutting down the system. If you specify <b> now </b>, the shutdown will start immediately.
 
-<h3> Reboot the system reboot </ h3>
+<h3> Reboot the system reboot </h3>
 
-Use the <b> reboot </ b> command to reboot the system.
+Use the <b> reboot </b> command to reboot the system.
 
 <pre>
 reboot
-</ pre>
+</pre>
 
-<h3> Display the date </ h3>
+<h3> Display the date </h3>
 
-Use the <b> data </ ​​b> command to display the date.
+Use the <b> data </​​b> command to display the date.
 
 <pre>
 date
-</ pre>
+</pre>
 
 If you want to display the time every second, you can write as follows.
 
@@ -90,68 +90,68 @@ do do
 date
 sleep 1
 done done
-</ pre>
+</pre>
 
 You can stop it with ctrl + c. sleep is a command that does nothing and waits for the specified number of seconds. while can be repeated in shell syntax.
 
-<h3> Compress files gzip </ h3>
+<h3> Compress files gzip </h3>
 
 Compression is an operation to reduce the size of the file. Use the gzip command for compression.
 
 <pre>
 gzip file name
-</ pre>
+</pre>
 
-The compressed file has the extension <b> .gz </ b> at the end.
+The compressed file has the extension <b> .gz </b> at the end.
 
 For example, if you compress development.log, it will become development.log.gz.
 
-<h3> Unzip the compressed file gunzip </ h3>
+<h3> Unzip the compressed file gunzip </h3>
 
-Use <b> gunzip </ b> to restore the compressed file.
+Use <b> gunzip </b> to restore the compressed file.
 
 <pre>
 gunzip Ashed file
-</ pre>
+</pre>
 
-<h3> Archive the directory tar </ h3>
+<h3> Archive the directory tar </h3>
 
 Archiving is the consolidation of multiple files contained in a directory into a single file. Use the tar command.
 
 <pre>
 tar fc archive name directory name
-</ pre>
+</pre>
 
-<B> f </ b> should be used when the target is a directory. <b> c </ b> must be specified when archiving. The archive name is usually "Direct name.tar".
+<B> f </b> should be used when the target is a directory. <b> c </b> must be specified when archiving. The archive name is usually "Direct name.tar".
 
 The following is a sample.
 
 <pre>
 tar cf dir1.tar dir1
-</ pre>
+</pre>
 
 You can also compress with gzip at once. In that case, specify the z option.
 
 <pre>
 tar cfz dir1.tar.gz dir1
-</ pre>
+</pre>
 
-<h4> Extract the archive </ h4>
+<h4> Extract the archive </h4>
 
-Use the <b> x </ b> option to extract the archive.
+Use the <b> x </b> option to extract the archive.
 
 <pre>
 tar xf archive name
-</ pre>
+</pre>
 
 The following is a sample.
 
 <pre>
 tar xf dir1.tar
-</ pre>
+</pre>
 
-Files that have been archived and then compressed with gzip can be expanded to the state of the directory by specifying the <b> z </ b> option at the same time.
+Files that have been archived and then compressed with gzip can be expanded to the state of the directory by specifying the <b> z </b> option at the same time.
 
 <pre>
 tar xfz dir1.tar.gz
-</ pre>
+</pre>

@@ -1,11 +1,11 @@
-<h2> Introduction of SSH client TeraTerm </ h2>
+<h2> Introduction of SSH client TeraTerm </h2>
 
 
 
 
 To log in remotely using an SSH server, a client application that supports SSH is required. Client applications that support SSH include Putty, Pedorosa, and TeraTerm. Here, we will use TeraTerm.
 
-<h3> Download and install TeraTerm </ h3>
+<h3> Download and install TeraTerm </h3>
 
 Download and install TeraTerm from the following site.
 
@@ -13,7 +13,7 @@ Download and install TeraTerm from the following site.
 [http://www.forest.impress.co.jp/lib/inet/servernt/remote/utf8teraterm.html:title=Tera Term]
 <<
 
-<h3> Creating a public / private key pair </ h3>
+<h3> Creating a public / private key pair </h3>
 In order to log in remotely using SSH, it is necessary to create a public key / private key pair.
 
 <pre>
@@ -23,23 +23,23 @@ In order to log in remotely using SSH, it is necessary to create a public key / 
 4. Click Generate to create your public and private keys
 5. Click Save puplic key to save the public key (id_dsa.pub)
 6. Click Save private key to save the private key (id_dsa)
-</ pre>
+</pre>
 
 A passphrase is a password. To connect with SSH, create a public / private key pair. You will move the public key to the server later.
 
-<h3> Upload public key </ h3>
+<h3> Upload public key </h3>
 
 Upload the public key. Let's upload it to the home directory of the logged-in user once. The public key is
 <pre>
 id_dsa.pub
-</ pre>
+</pre>
 
 It is the one. Don't mistake it for your private key.
 
-<h3> Working on the server </ h3>
+<h3> Working on the server </h3>
 From here, return to the setting work on the server. See [/blog/20090104123071.html:title=Introducing OpenSSH] for working on the server.
 
-<h3> Connect with SSH from TeraTerm </ h3>
+<h3> Connect with SSH from TeraTerm </h3>
 After completing the setting work on the server, SSH connection is made with TeraTerm. Start TeraTerm, enter the IP address of the server, check SSH and press OK. Also make sure that the SSH version is SSH2.
 
 A security warning may appear, but press OK.
