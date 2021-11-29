@@ -1,114 +1,114 @@
-<h2>Linuxの基本的なコマンドを覚えよう その1</h2>
+<h2> Let's learn the basic commands of Linux Part 1 </ h2>
 
 
 
-　Linuxで作業をするとなると、便利なコマンドを覚えておくと作業が効率的にはかどります。そんな便利なコマンドをいくつか紹介します。
+When working on Linux, remembering useful commands will make the work more efficient. Here are some useful commands.
 
-<h3>カレントディレクトリのパスを表示</h3>
+<h3> Show the path of the current directory </ h3>
 
-　カレントディレクトリというのは、現在作業しているディレクトリのことです。<b>pwd</b>コマンドを使うとカレントディレクトリのパスを表示できます。
+The current directory is the directory you are currently working on. You can use the <b> pwd </ b> command to display the path of the current directory.
 
 <pre>
 pwd
-</pre>
-　次のようにカレントディレクトリのパスが表示されます。
+</ pre>
+The path of the current directory is displayed as shown below.
 <pre>
-/home/kimoto
-</pre>
+/ home / kimoto
+</ pre>
 
-<h3>カレントディレクトリの変更</h3>
+<h3> Change current directory </ h3>
 
-　カレントディレクトリを移動するには<b>cd</b>コマンドを使います。
+Use the <b> cd </ b> command to move the current directory.
 <pre>
-cd ディレクトリ名
-</pre>
-　ディレクトリ名は、カレントディレクトリを基準にした相対パスあるいは、完全なパスを記述する絶対パスの両方でしてすることができます。
+cd directory name
+</ pre>
+The directory name can be either a relative path relative to the current directory or an absolute path that describes the complete path.
 
-　たとえば「/home/kimoto」というカレントディレクトリで作業している場合に、この直下にある「labo」というディレクトリに移動したい場合は次のようにします。
+For example, if you are working in the current directory "/ home / kimoto" and want to move to the directory "labo" directly under this, do as follows.
 
 <pre>
 cd labo
-</pre>
+</ pre>
 
-　また絶対パスを指定して移動することもできます。
+You can also move by specifying the absolute path.
 
 <pre>
-cd /home/kimoto/labo
-</pre>
+cd / home / kimoto / labo
+</ pre>
 
-<h4>ホームディレクトリの簡略表記</h4>
+<h4> Abbreviated notation of home directory </ h4>
 
-　cdコマンドのテクニックをいくつか紹介します。「~」というディレクトリ名を利用するとユーザーのホームディレクトリに移動することができます。
+Here are some techniques for the cd command. You can use the directory name "~" to move to the user's home directory.
 
 <pre>
 cd ~
-</pre>
+</ pre>
 
-　もしユーザーがkimotoである場合は次の指定と同じ意味になります。
-
-<pre>
-cd /home/kimoto
-</pre>
-
-<h4>ワイルドカードを使って楽に指定する</h4>
-
-　実はcdで移動するときは、ワイルドカードを利用すれば、ディレクトリ名のすべての名前を指定する必要はありません。
+If the user is kimoto, it has the same meaning as the following specification.
 
 <pre>
-cd la*
-</pre>
+cd / home / kimoto
+</ pre>
 
-　<b>*</b>というのがワイルドカードで、「la*」という指定を行うと、もし「labo」というディレクトリがあればそこに移動できます。すべての名前をタイピングしたり、コピーアンドペーストしたりするのが、めんどうなときは便利に使えるテクニックです。
+<h4> Specify easily using wildcards </ h4>
 
-<h3>ディレクトリに含まれるファイル一覧を表示する</h3>
+Actually, when moving with cd, if you use wildcards, you do not need to specify all the names of the directory name.
 
-　ディレクトリに含まれるファイル一覧(ディレクトリも含む)を表示するには<b>ls</b>コマンドを使用します。
+<pre>
+cd la *
+</ pre>
+
+<B> * </ b> is a wildcard, and if you specify "la *", you can move to the directory "labo" if it exists. Typing or copying and pasting all names is a useful technique when you're having trouble.
+
+<h3> Display the list of files contained in the directory </ h3>
+
+Use the <b> ls </ b> command to display the list of files contained in the directory (including the directory).
 
 <pre>
 ls
-</pre>
-　次のようにファイルの一覧が表示されます。
+</ pre>
+A list of files will be displayed as shown below.
 <pre>
-README  lib script
-</pre>
+README lib script
+</ pre>
 
-<h4>詳細を見る</h4>
+<h4> See details </ h4>
 
-　ファイルのパーミッションやファイルのサイズなどの情報を含めるには<b>l</b>オプションを使用します。
+Use the <b> l </ b> option to include information such as file permissions and file size.
 
 <pre>
 ls -l
-</pre>
-　次のようにファイルの詳細情報をみることができます。
+</ pre>
+You can see the detailed information of the file as follows.
 <pre>
--rw-rw-r-- 1 kimoto kimoto    588  6月 16 13:19 README
-drwxrwxr-x 3 kimoto kimoto   4096  6月 16 16:39 lib
-drwxrwxr-x 2 kimoto kimoto   4096  6月 25 19:21 script
-</pre>
+-rw-rw-r-- 1 kimoto kimoto 588 June 16 13:19 README
+drwxrwxr-x 3 kimoto kimoto 4096 June 16 16:39 lib
+drwxrwxr-x 2 kimoto kimoto 4096 June 25 19:21 script
+</ pre>
 
-　一番左側にあるのがパーミッションの設定です。パーミッションというのは、ファイルに対するアクセス権限のことです。この連載で後ほど考え方を紹介したいと思います。
+The permission setting is on the far left. Permissions are the permissions on a file. I would like to introduce the idea later in this series.
 
-<h4>隠しファイルも見る</h4>
+<h4> See hidden files </ h4>
 
-　lsコマンドは、.(ドット)で始まる隠しファイルをデフォルトでは表示しません。隠しファイルを含めて表示するには、<b>a</b>オプションを使用します。
+The ls command does not display hidden files starting with. (Dot) by default. Use the <b> a </ b> option to display hidden files.
 
 <pre>
 ls -a
-</pre>
-　このようにすると隠しファイルも表示することができます。
+</ pre>
+By doing this, hidden files can also be displayed.
 
-　Linuxではオプションは複数を指定することもできます。たとえば、詳細表示と隠しファイルの表示のオプションを両方指定することができます。
+In Linux, you can specify multiple options. For example, you can specify both advanced and hidden file display options.
 
 <pre>
 ls -al
-</pre>
+</ pre>
 
-<h4>ワイルドカードで表示するファイルを絞り込む</h4>
+<h4> Narrow down the files to be displayed with wildcards </ h4>
 
-　ワイルドカードを利用すると表示するファイルを絞り込むことができます。
+You can narrow down the files to be displayed by using wildcards.
 
 <pre>
-ls 2012*
-</pre>
+ls 2012 *
+</ pre>
 
-　上記のように指定すると、2012で始まるファイルだけを表示させることができます。
+If you specify as above, you can display only the files starting with 2012.

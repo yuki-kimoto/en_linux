@@ -1,53 +1,51 @@
-<h2>gccコマンド - C言語ソースコードのコンパイルとリンク</h2>
+<h2> gcc command --Compile and link C language source code </ h2>
 
-<b>gccコマンド</b>は、C言語ソースコードのコンパイルとリンクを行うためのコマンドです。
+The <b> gcc command </ b> is a command for compiling and linking C language source code.
 
-コンパイルとリンクを行って、実行ファイルを生成するにはgccコマンドで、「-o」オプションを使用します。
-
-<pre>
-gcc -o 出力ファイル名 入力ファイル名
-</pre>
-
-「-o」オプションで出力ファイル名を指定します。
+To compile and link and generate an executable file, use the "-o" option with the gcc command.
 
 <pre>
-gcc -o 出力ファイル名 入力ファイル名
-</pre>
+gcc -o output file name input file name
+</ pre>
 
-このコマンドでは、コンパイルとリンクの作業を一度に行ってしまいます。入力ファイルが一つなので、リンクした気分にはならないです。リンクという言葉の意味もまだ説明していません。まず実行できるところまでを、試してみましょう。
+Specify the output file name with the "-o" option.
 
-「test.c」というC言語ソースファイルから「test」という実行ファイルを作成してみましょう。
+<pre>
+gcc -o output file name input file name
+</ pre>
+
+This command will compile and link all at once. Since there is only one input file, I don't feel like linking. I haven't explained the meaning of the word link yet. Let's try as far as we can.
+
+Let's create an executable file called "test" from a C language source file called "test.c".
 
 <pre>
 // test.c
 
 #include <stdio.h>
 
-int main(void) {
-  printf("Hello World!\n");
+int main (void) {
+  printf ("Hello World! \ N");
 }
-</pre>
+</ pre>
 
-gccコマンドで実行ファイルを生成します。
+Generate an executable file with the gcc command.
 
 <pre>
 gcc -o test test.c
-</pre>
+</ pre>
 
-<h3>gccを使ったC言語開発環境の構築手順</h3>
+<h3> Procedure for building a C language development environment using gcc </ h3>
 
-gccを使ったC言語開発環境の構築手順については以下の記事を参考にしてください。
-
-<ul>
-  <li><a href="https://ubuntu.perlclub.net/blog/20201123133738.html">UbuntuでC言語/C++開発環境構築</a></li>
-</ul>
-
-<h3>C言語で開発を行う</h3>
-
-gccを使ってC言語で実際に開発を行うには、以下のサイトを参考にしてください。
+Please refer to the following article for the procedure for building a C language development environment using gcc.
 
 <ul>
-  <li><a href="https://clanguage.perlclub.net/">C99対応のC言語入門</a></li>
-</ul>
+  <li> <a href="https://ubuntu.perlclub.net/blog/20201123133738.html"> C language / C ++ development environment construction on Ubuntu </a> </ li>
+</ ul>
 
+<h3> Develop in C language </ h3>
 
+To actually develop in C language using gcc, please refer to the following site.
+
+<ul>
+  <li> <a href="https://clanguage.perlclub.net/"> Introduction to C language for C99 </a> </ li>
+</ ul>

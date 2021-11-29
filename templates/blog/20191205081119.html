@@ -1,67 +1,65 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
-<h2>touchコマンド - ファイルを新規作成する</h2>
+    </ li>
+  </ ul>
+</ div>
+<h2> touch command-create a new file </ h2>
 
-touchコマンドを使用すると、ファイルを新規作成することができます。
+You can use the touch command to create a new file.
 
 <pre>
-touch ファイル名
-</pre>
+touch file name
+</ pre>
 
-touchコマンドでfoo.txtという名前のファイルを作成してみましょう。
+Let's create a file named foo.txt with the touch command.
 
 <pre>
 touch foo.txt
-</pre>
+</ pre>
 
-<a href="/blog/20191126082723.html">lsコマンド</a>でfoo.txtというファイルが作成されていることを確認してみましょう。
+Let's confirm that the file foo.txt is created by <a href="/blog/20191126082723.html"> ls command </a>.
 
-確認できたら成功です。
+If you can confirm it, you are successful.
 
-<h3>ヘルプを表示する --helpオプション</h3>
+<h3> Show help --help option </ h3>
 
-ヘルプを表示するには「--help」オプションを使用します。
+Use the "--help" option to get help.
 
 <pre>
 touch --help
-</pre>
+</ pre>
 
-ヘルプが表示されます。
+Help is displayed.
 
 <pre>
-sage: touch [OPTION]... FILE...
+sage: touch [OPTION] ... FILE ...
 Update the access and modification times of each FILE to the current time.
 
 Mandatory arguments to long options are mandatory for short options too.
-  -a                     change only the access time
-  -c, --no-create        do not create any files
-  -d, --date=STRING      parse STRING and use it instead of current time
-  -f                     (ignored)
-  -m                     change only the modification time
-  -r, --reference=FILE   use this file's times instead of current time
-  -t STAMP               use [[CC]YY]MMDDhhmm[.ss] instead of current time
-  --time=WORD            change the specified time:
+  -a change only the access time
+  -c, --no-create do not create any files
+  -d, --date = STING parse STRING and use it instead of current time
+  -f (ignored)
+  -m change only the modification time
+  -r, --reference = FILE use this file's times instead of current time
+  -t STAMP use [[CC] YY] MMDDhhmm [.ss] instead of current time
+  --time = WORD change the specified time:
                            WORD is access, atime, or use: equivalent to -a
                            WORD is modify or mtime: equivalent to -m
-      --help     display this help and exit
-      --version  output version information and exit
-</pre>
-
-
+      --help display this help and exit
+      --version output version information and exit
+</ pre>

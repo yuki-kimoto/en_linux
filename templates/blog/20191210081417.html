@@ -1,80 +1,78 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
-<h2>rmコマンド - ファイルの削除</h2>
+    </ li>
+  </ ul>
+</ div>
+<h2> rm command-delete file </ h2>
 
-rmコマンドを使用するとファイルを削除することができます。rmはremoveに由来しています。
+You can delete the file using the rm command. rm comes from remove.
 
 <pre>
-rm ファイル名
-</pre>
+rm file name
+</ pre>
 
-rmコマンドを使ってfoo.txtというファイルを削除してみます。
+Try deleting the file foo.txt using the rm command.
 
 <pre>
 rm foo.txt
-</pre>
+</ pre>
 
-<h3>ディレクトリとその中身をすべて削除する - rmコマンドの「-r」オプション</h3>
+<h3> Delete directory and all its contents --- "-r" option of rm command </ h3>
 
-ディレクトリとその中身をすべて削除するには、rmコマンドの「-r」オプションを使用します。「-r」はrecursive(再帰的)に由来しています。
-
-<pre>
-rm -r ディレクトリ名
-</pre>
-
-このコマンドは、ディレクトリとその中にあるファイルをすべて削除しますので気をつけて使いましょう。
-
-<h3>強制的にファイルを削除する - rmコマンドの「-f」オプション</h3>
-
-rmコマンドでファイルを削除しようとした場合は、ファイルを削除するか確認を求められる場合があります。
-
-そのような場合でも、確認をしないで消したい場合は、rmコマンドの「-f」オプションを使用します。「-f」はforce(強制的)に由来しています。
+To remove the directory and all its contents, use the "-r" option of the rm command. "-R" comes from recursive.
 
 <pre>
-rm -rf ディレクトリ名
-</pre>
+rm -r directory name
+</ pre>
 
-このコマンドは、ディレクトリとその中にあるファイルをすべて確認なしに、削除しますので気をつけて使いましょう。
+This command will delete the directory and all the files in it, so be careful.
 
-<h3>ヘルプを表示する --helpオプション</h3>
+<h3> Forcibly delete files --- "-f" option of rm command </ h3>
 
-ヘルプを表示するには「--help」オプションを使用します。
+If you try to delete a file with the rm command, you may be asked if you want to delete the file.
+
+Even in such a case, if you want to delete it without confirmation, use the "-f" option of the rm command. "-F" comes from force.
+
+<pre>
+rm -rf directory name
+</ pre>
+
+Be careful when using this command as it will delete the directory and all the files in it without confirmation.
+
+<h3> Show help --help option </ h3>
+
+Use the "--help" option to get help.
 
 <pre>
 rm --help
-</pre>
+</ pre>
 
-ヘルプが表示されます。
+Help is displayed.
 
 <pre>
-Usage: rm [OPTION]... FILE...
-Remove (unlink) the FILE(s).
+Usage: rm [OPTION] ... FILE ...
+Remove (unlink) the FILE (s).
 
-  -f, --force           ignore nonexistent files, never prompt
-  -i, --interactive     prompt before any removal
-      --no-preserve-root do not treat `/' specially (the default)
-      --preserve-root   fail to operate recursively on `/'
-  -r, -R, --recursive   remove directories and their contents recursively
-  -v, --verbose         explain what is being done
-      --help     display this help and exit
-      --version  output version information and exit
-</pre>
-
-
+  -f, --force ignore nonexistent files, never prompt
+  -i, --interactive prompt before any removal
+      --no-preserve-root do not treat `/'specially (the default)
+      --preserve-root fail to operate recursively on `/'
+  -r, -R, --recursive remove directories and their contents recursively
+  -v, --verbose explain what is being done
+      --help display this help and exit
+      --version output version information and exit
+</ pre>

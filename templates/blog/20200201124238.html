@@ -1,42 +1,40 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
-<h2>diffコマンド - ファイルの差分を確認する</h2>
+    </ li>
+  </ ul>
+</ div>
+<h2> diff command-check file diffs </ h2>
 
-diffコマンドを使用すると、ファイルの差分を確認できます。
+You can use the diff command to see the differences in the files.
 
 <pre>
-git diff ファイル1 ファイル2
-</pre>
+git diff file 1 file 2
+</ pre>
 
-diffの出力結果のサンプルです。
+This is a sample of the output result of diff.
 
 <pre>
   ServerName system.online-fudousan.jp
 
--  <Directory /var/www>
--    Options +ExecCGI
--  </Directory>
--
+-<Directory / var / www>
+--Options + ExecCGI
+--</ Directory>
+――――
    RewriteEngine On
-   RewriteCond %{HTTP_HOST} !^\Qsystem.online-fudousan.jp\E
-   RewriteRule (.+) https://system.online-fudousan.jp$1 [R=301,L]
-</pre>
-
-
+   RewriteCond% {HTTP_HOST}! ^ \ Qsystem.online-fudousan.jp \ E
+   RewriteRule (. +) Https://system.online-fudousan.jp $ 1 [R = 301, L]
+</ pre>

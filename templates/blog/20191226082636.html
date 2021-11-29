@@ -1,23 +1,23 @@
-<h2>所有者ユーザーとは</h2>
+<h2> What is the owner user? </ H2>
 
-所有者ユーザーとは、inodeに保存されているファイルの属性のひとつで、ファイルがどのユーザーに所有されているかという情報です。
+The owner user is one of the attributes of a file stored in the inode and is information about which user owns the file.
 
-ファイルを所有しているユーザーは、そのファイルに対して、ユーザーのパーミッションで指定されている、読み込み、書き込み、実行の操作を行うことができます。
+The user who owns the file can perform read, write, and execute operations on the file as specified by the user's permissions.
 
-<h3>所有者ユーザーを確認する</h3>
+<h3> Confirm the owner user </ h3>
 
-lsコマンドの「-l」オプションで、ディレクトリの詳細情報を表示すると所有者が表示されます。
+The "-l" option of the ls command shows the owner when you view the directory details.
 
 <pre>
-             # 所有者ユーザー
--rw-r--r-- 1 kimoto kimoto  227 Aug 10 15:01 README
--rw-r--r-- 1 kimoto kimoto  219 Aug 10 15:01 serve.pl
+             #Owner user
+-rw-r--r-- 1 kimoto kimoto 227 Aug 10 15:01 README
+-rw-r--r-- 1 kimoto kimoto 219 Aug 10 15:01 serve.pl
 drwxrwxr-x 5 kimoto kimoto 4096 Aug 10 15:01 templates
--rwxrwxr-x 1 kimoto kimoto  219 Aug 10 15:01 mycmd
-</pre>
+-rwxrwxr-x 1 kimoto kimoto 219 Aug 10 15:01 mycmd
+</ pre>
 
-この例では、二つある「kimoto」のうち左側が、所有者ユーザーです。右側は、所有者グループです。
+In this example, the owner user is on the left side of the two "kimoto". On the right is the owner group.
 
-READMEのパーミッションを見てみましょう。「-rw-r--r--」となっています。一番左は、ディレクトリかどうかを表しているフラグです。その次の三つ「rw-」が、所有者ユーザーのパーミッションです。rとwのフラグがあるので、READMEの所有者ユーザー「kimoto」は、READMEに対して「読み込み」「書き込み」できます。
+Let's take a look at the permissions of the README. It is "-rw-r--r--". On the far left is a flag that indicates whether it is a directory. The next three "rw-" are the permissions of the owner user. The r and w flags allow the README owner user "kimoto" to "read" and "write" to the README.
 
-所有者ユーザーは、ファイルとパーミッションと関係しているというところがポイントです。
+The point is that the owner user is related to files and permissions.

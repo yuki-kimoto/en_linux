@@ -1,95 +1,94 @@
-<h2>ファイルとは</h2>
+<h2> What is a file? </ H2>
 
-Linuxにおけるファイルとは何でしょうか?
+What are files in Linux?
 
-<h3>ファイルはデータを保存しておく場所</h3>
+<h3> File is the place to save data </ ​​h3>
 
-ファイルには、テキストデータやバイナリデータなどのデータを保存しておくことができます。
+Data such as text data and binary data can be saved in the file.
 
 <pre>
-# テキストデータ
+#Text data
 example.txt
 http.conf
 
-# 画像や音声や動画などのバイナリデータ
+#Binary data such as images, sounds and videos
 image.png
 image.jpg
 music.mp3
 movie.mpg
-</pre>
+</ pre>
 
-ファイルは、ハードディスクと呼ばれる保存領域に、データを保存しておくための優れた仕組みです。
+Files are a great way to store data in a storage area called your hard disk.
 
-ユーザーは、ハードディスクのことを考えなくとも、ファイルを意識するだけで、データをハードディスクに保存することができます。
+Users can save data to the hard disk simply by being aware of the file, without having to think about the hard disk.
 
-これは、Linuxだけではなく、Windowsのファイルにおいても同じです。
+This is true not only for Linux, but also for Windows files.
 
-<h3>パスとは</h3>
+<h3> What is a path? </ H3>
 
-Linuxにおけるファイル名は、パスを使って表現されます。パスは、ファイルがある場所を示します。パスには、絶対パスと相対パスがあります。
+Filenames on Linux are represented using paths. The path indicates where the file is located. Paths include absolute paths and relative paths.
 
-<h4>絶対パス</h4>
+<h4> Absolute path </ h4>
 
-先頭が「/」で始まっているパスを<a href="/blog/20191216082522.html">絶対パス</a>と呼ます。絶対パスは、Linuxのルートディレクトリ「/」から見た、ファイルの場所を一意的に表現します。
+Paths that start with "/" are called <a href="/blog/20191216082522.html"> absolute paths </a>. The absolute path uniquely represents the location of the file as seen from the Linux root directory "/".
 
 <pre>
-# 絶対パス
+# Absolute path
 /home/kimoto/foo.txt
 /var/log/httpd.log
 /usr/local/myapp/myapp.conf
-</pre>
+</ pre>
 
-Linuxにおけるパスの区切り文字は、スラッシュ「/」です。Windowsにおけては、バックスラッシュ(円マーク)「\」です。この点がWindowsとは異なるということに注意してください。
+The path delimiter on Linux is the slash "/". In Windows, it is a backslash (yen mark) "\". Please note that this is different from Windows.
 
-<h4>相対パス</h4>
+<h4> Relative path </ h4>
 
-先頭が「/」で始まっていないパスを<a href="/blog/20191216082522.html">相対パス</a>と呼ます。相対パスは、<a href="/blog/20191218072611.html">カレントディレクトリ</a>から見た、相対的なファイルの場所を表現します。
+Paths that do not start with "/" are called <a href="/blog/20191216082522.html"> relative paths </a>. Relative paths represent the relative file locations as seen from the <a href="/blog/20191218072611.html"> current directory </a>.
 
 <pre>
-# 相対パス
+#Relative path
 foo.txt
-labo/bar.txt
-</pre>
+labo / bar.txt
+</ pre>
 
-カレントディレクトリが
+The current directory is
 
 <pre>
-/home/kimoto
-</pre>
+/ home / kimoto
+</ pre>
 
-の場合は
+In the case of
 
 <pre>
 foo.txt
-</pre>
+</ pre>
 
-は
+teeth
 
 <pre>
 /home/kimoto/foo.txt
-</pre>
+</ pre>
 
-を表現します。
+Represents.
 
-<h3>ディレクトリもファイルの一種</h3>
+<h3> Directories are also a type of file </ h3>
 
-Linuxでは、ディレクトリも特別なファイルの一つとして扱われることに注意しましょう。ディレクトリとは、ファイルを階層的に表現する方法で、Windowsにおけるフォルダに該当します。
+Note that on Linux, directories are also treated as one of the special files. A directory is a hierarchical representation of files and corresponds to a folder in Windows.
 
-Linuxでファイルといった場合は、文脈によって、ディレクトリも含んだファイルか、テキストデータやバイナリデータを含んだ通常のファイルの両方を指すことがあるので注意しましょう。
+Note that when we say a file on Linux, we may refer to both a file that also contains a directory or a regular file that contains text or binary data, depending on the context.
 
-たとえば「ファイル一覧」が見れますといった場合は、文脈によっては「ディレクトリなどの特別なファイルも含んだファイル一覧」という意味になります。
+For example, if you can see the "file list", it means "file list including special files such as directories" depending on the context.
 
-ディレクトリの中には、その階層の一つ下に存在するファイル名が、記述されています。
+In the directory, the file name that exists one level below that level is described.
 
 <pre>
 foo.txt
 test
 bar.png
-</pre>
+</ pre>
 
-これは<a href="/blog/20191126082723.html">lsコマンド</a>を使って確認することができます。
+This can be checked using the <a href="/blog/20191126082723.html"> ls command </a>.
 
 <pre>
-ls /home/kimoto
-</pre>
-
+ls / home / kimoto
+</ pre>

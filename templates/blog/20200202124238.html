@@ -1,46 +1,44 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
-<h2>headコマンド - ファイルの先頭を出力</h2>
+    </ li>
+  </ ul>
+</ div>
+<h2> head command-output the beginning of the file </ h2>
 
-headコマンドを使用するとファイルの先頭の部分を出力することができます。ファイルの先頭だけを確認したい場合に使います。
+You can use the head command to output the beginning of the file. Use this when you want to check only the beginning of the file.
 
 <pre>
-head ファイル名
-</pre>
+head file name
+</ pre>
 
-headコマンドは、ファイルの全体を読み込むわけではないので、高速です。
+The head command is fast because it doesn't read the entire file.
 
-<h3>headコマンドのサンプル</h3>
+<h3> Head command sample </ h3>
 
-foo.txtの先頭を表示するheadコマンドのサンプルです。
+This is a sample head command that displays the beginning of foo.txt.
 
 <pre>
 head foo.txt
-</pre>
+</ pre>
 
-<h3>先頭に表示する行数を指定する</h3>
+<h3> Specify the number of lines to display at the beginning </ h3>
 
-ハイフンの後ろに行数を指定することで、先頭に表示する行数を指定できます。以下の例は、先頭の20行を表示します。
+You can specify the number of lines to display at the beginning by specifying the number of lines after the hyphen. The following example displays the first 20 lines.
 
 <pre>
-head -20 ファイル名
-</pre>
-
-
+head -20 filename
+</ pre>

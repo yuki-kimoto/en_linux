@@ -1,138 +1,136 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
+    </ li>
+  </ ul>
+</ div>
 
-<h2>cdコマンド - カレントディレクトリの変更</h2>
+<h2> cd command-change current directory </ h2>
 
-cdコマンドを使うと、<a href="/blog/20191218072611.html">カレントディレクトリ</a>を変更することができます。
+You can change the <a href="/blog/20191218072611.html"> current directory </a> using the cd command.
 
 <pre>
-cd ディレクトリ名
-</pre>
+cd directory name
+</ pre>
 
-<h4>ディレクトリ名を相対パスで指定</h4>
+<h4> Specify the directory name with a relative path </ h4>
 
-cdコマンドで、「labo」というディレクトリにカレントディレクトリを変更するには次のコマンドを実行します。
+To change the current directory to the directory "labo" with the cd command, execute the following command.
 
 <pre>
 cd labo
-</pre>
+</ pre>
 
-これは、現在のカレントディレクトリを起点として、カレントディレクトリの現在の階層にある「labo」ディレクトリを、カレントディレクトリとするという意味です。
+This means that the "labo" directory in the current hierarchy of the current directory is the current directory, starting from the current current directory.
 
-これを、ディレクトリ名を相対パスで指定するといいます。
+This is called specifying the directory name with a relative path.
 
-<h4>ディレクトリ名を絶対パスで指定</h4>
+<h4> Specify the directory name with an absolute path </ h4>
 
-cdコマンドでディレクトリ名を絶対パスで指定することもできます。
+You can also specify the directory name with an absolute path with the cd command.
 
-「/usr/local/lib」というディレクトリに移動するには以下のコマンドを実行します。
-
-<pre>
-cd /usr/local/lib
-</pre>
-
-絶対パスは先頭が「/」で始まることが特徴です。cdコマンドは、先頭の「/」を見て、相対パスか絶対パスかを識別します。
-
-<h3>カレントディレクトとは?</h3>
-
-カレントディレクトリというのは、現在作業中のディレクトリのことです。Linuxでいうディレクトリというのは、Windowsのフォルダと同じ意味だと考えてください。
-
-
-Linuxにログインしたときは、ホームディレクトリと呼ばれる場所が、カレントディレクトリとなります。
+To change to the directory "/ usr / local / lib", execute the following command.
 
 <pre>
-/home/kimoto
-</pre>
+cd / usr / local / lib
+</ pre>
 
-カレントディレクトリを表示するにはpwdコマンドが使えます。
+Absolute paths are characterized by starting with "/". The cd command looks at the leading "/" to identify whether it is a relative path or an absolute path.
+
+<h3> What is the current directory? </ H3>
+
+The current directory is the directory you are currently working on. Think of a directory in Linux as having the same meaning as a folder in Windows.
+
+
+When you log in to Linux, the location called your home directory is your current directory.
+
+<pre>
+/ home / kimoto
+</ pre>
+
+You can use the pwd command to display the current directory.
 
 <pre>
 pwd
-</pre>
+</ pre>
 
-今いるディレクトリってどこだっけなとなったときは、pwdコマンドで確認できます。
+If you find yourself in the wrong directory, you can check it with the pwd command.
 
-<h3>特殊なディレクトリ名</h3>
+<h3> Special directory name </ h3>
 
-特殊なディレクトリ名として、次のディレクトリ名を覚えておきましょう。
+Remember the following directory names as special directory names.
 
-<h4>現在のカレントディレクトリ - .</h4>
+<h4> Current current directory-. </ h4>
 
-「.」は、現在のカレントディレクトリを指す特殊なディレクトリ名です。
+"." Is a special directory name that points to the current current directory.
 
 <pre>
-cd .
-</pre>
+cd.
+</ pre>
 
-これは、カレントディレクトリを現在のカレントディレクトリに変更するだけなので、何も起こりません。
+This just changes the current directory to the current current directory, so nothing happens.
 
-でも、意味を覚えておいてください。cdコマンドでは特に意味がありませんが、意味を持つ場面があります。
+But remember the meaning. The cd command has no particular meaning, but there are some situations where it makes sense.
 
-<h4>親ディレクトリ - ..</h4>
+<h4> Parent directory --.. </ h4>
 
-「..」は、親ディレクトリを指す特殊なディレクトリ名です。
+".." is a special directory name that points to the parent directory.
 
-カレントディレクトリを変更して、一階層上の親ディレクトリに戻りたい場合に、頻繁に利用します。
+It is frequently used when you want to change the current directory and return to the parent directory one level higher.
 
 <pre>
 cd ..
-</pre>
+</ pre>
 
-<h4>ホームディレクトリ - ~</h4>
+<h4> Home directory-~ </ h4>
 
-「~」は、ホームディレクトリを指す特殊なディレクトリ名です。
+"~" Is a special directory name that points to your home directory.
 
 <pre>
 cd ~
-</pre>
+</ pre>
 
-ユーザーが「kimoto」の場合は、ホームディレクトリは以下のように展開されます。
-
-<pre>
-cd /home/kimoto
-</pre>
-
-特殊なディレクトリ「.」「..」「~」については、実際は、cdコマンドが解釈しているわけではなく、シェルが解釈しているのですが、cdコマンドで使用する頻度が高いので、紹介しました。
-
-<h3>cdコマンドのサンプル</h3>
-
-ホームディレクトリにカレントディレクトリを変更して、そこにlaboディレクトリを作成して、laboディレクトリにカレントディレクトリを変更するサンプルです。
+If the user is "kimoto", the home directory will be expanded as follows.
 
 <pre>
-# ホームディレクトリにカレントディレクトリを変更
+cd / home / kimoto
+</ pre>
+
+The special directories ".", "..", and "~" are not actually interpreted by the cd command, but by the shell, but they are frequently used by the cd command, so I will introduce them. Did.
+
+<h3> cd command sample </ h3>
+
+This is a sample that changes the current directory to the home directory, creates a labo directory there, and changes the current directory to the labo directory.
+
+<pre>
+# Change the current directory to your home directory
 cd ~
 
-# laboディレクトリを作成
+Create #labo directory
 mkdir labo
 
-# laboにカレントディレクトリを変更
+Change current directory to #labo
 cd labo
 
-# pwdコマンドで現在のカレントディレクトリをチェック
+Check the current current directory with the #pwd command
 pwd
-</pre>
+</ pre>
 
-Perlゼミの環境では、以下のように表示されました。
+In the Perl seminar environment, it was displayed as follows.
 
 <pre>
-/home/kimoto/labo
-</pre>
-
-
+/ home / kimoto / labo
+</ pre>

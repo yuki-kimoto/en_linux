@@ -1,67 +1,65 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
-<h2>mkdirコマンド - ディレクトリを作成する</h2>
+    </ li>
+  </ ul>
+</ div>
+<h2> mkdir command-create a directory </ h2>
 
-mkdirコマンドを使用するとディレクトリを作成することができます。mkdirは「make directory」が由来です。
+You can create a directory using the mkdir command. mkdir comes from "make directory".
 
 <pre>
-mkdir ディレクトリ名
-</pre>
+mkdir directory name
+</ pre>
 
-mkdirコマンドを使って、fooディレクトリを作成するサンプルです。
+This is a sample to create a foo directory using the mkdir command.
 
 <pre>
 mkdir foo
-</pre>
+</ pre>
 
-<h3>複数階層のディレクトリを作成する - 「mkdir」の「-p」オプション</h3>
+<h3> Create a multi-level directory --- "-p" option of "mkdir" </ h3>
 
-複数階層のディレクトリを一度に作成するには、 「mkdir」の「-p」オプションを使用します。
+To create multiple levels of directories at once, use the "-p" option of "mkdir".
 
 <pre>
-mkdir -p foo/bar
-</pre>
+mkdir -p foo / bar
+</ pre>
 
-「foo/bar」というディレクトリが作成されます。「foo」ディレクトリが存在しない場合は、自動的に「foo」ディレクトリが作成されます。
+A directory called "foo / bar" will be created. If the "foo" directory does not exist, the "foo" directory is automatically created.
 
-<h3>ヘルプを表示する --helpオプション</h3>
+<h3> Show help --help option </ h3>
 
-ヘルプを表示するには「--help」オプションを使用します。
+Use the "--help" option to get help.
 
 <pre>
 mkdir --help
-</pre>
+</ pre>
 
-ヘルプが表示されます。
+Help is displayed.
 
 <pre>
-Usage: mkdir [OPTION] DIRECTORY...
-Create the DIRECTORY(ies), if they do not already exist.
+Usage: mkdir [OPTION] DIRECTORY ...
+Create the DIRECTORY (ies), if they do not already exist.
 
 Mandatory arguments to long options are mandatory for short options too.
-  -m, --mode=MODE   set permission mode (as in chmod), not rwxrwxrwx - umask
-  -p, --parents     no error if existing, make parent directories as needed
-  -v, --verbose     print a message for each created directory
-  -Z, --context=CONTEXT (SELinux) set security context to CONTEXT
-      --help     display this help and exit
-      --version  output version information and exit
-</pre>
-
-
+  -m, --mode = MODE set permission mode (as in chmod), not rwxrwxrwx --umask
+  -p, --parents no error if existing, make parent directories as needed
+  -v, --verbose print a message for each created directory
+  -Z, --context = CONTEXT (SELinux) set security context to CONTEXT
+      --help display this help and exit
+      --version output version information and exit
+</ pre>

@@ -1,45 +1,43 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
-<h2>catコマンド - ファイルの内容を出力する</h2>
+    </ li>
+  </ ul>
+</ div>
+<h2> cat command-output the contents of the file </ h2>
 
-catコマンドを使うとファイルの内容を出力できます。
+You can use the cat command to output the contents of the file.
 
 <pre>
-# ファイルの内容を出力
+# Output the contents of the file
 cat foo.txt
-</pre>
+</ pre>
 
-出力結果は以下のようになります。
+The output result is as follows.
 
 <pre>
 Hello
 World!
-</pre>
+</ pre>
 
-catというのは、concatが由来です。concatは、つなげるという意味です。
+cat is derived from concat. concat means to connect.
 
-実は、catコマンドに複数のファイルを渡すと、複数のファイル内容をつなげて、出力してくれるのです。これが、名前の由来です。
+In fact, if you pass multiple files to the cat command, the contents of multiple files will be connected and output. This is the origin of the name.
 
 <pre>
-# 複数のファイルの内容をつなげて出力
+# Output by connecting the contents of multiple files
 cat foo.txt bar.txt
-</pre>
-
-
+</ pre>

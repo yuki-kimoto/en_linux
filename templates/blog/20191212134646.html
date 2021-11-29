@@ -1,66 +1,64 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
-<h2>rmdir - ディレクトリを削除する</h2>
+    </ li>
+  </ ul>
+</ div>
+<h2> rmdir --delete directory </ h2>
 
-rmdirコマンドを使用すると、ディレクトリを削除することができます。
+You can delete the directory using the rmdir command.
 
 <pre>
-rmdir ディレクトリ名
-</pre>
+rmdir directory name
+</ pre>
 
-ディレクトリが空でない場合は、削除することができません。
+If the directory is not empty, it cannot be deleted.
 
-<h3>ディレクトリが空でない場合に、削除するには?</h3>
+<h3> How to delete if the directory is not empty? </ H3>
 
-rmdirコマンドは、ディレクトリの内容が空の場合のみ、削除することができます。
+The rmdir command can only be deleted if the contents of the directory are empty.
 
-ディレクトリが空でない場合に削除するには「rmコマンド」の「-r」オプションを使用します。
+To delete a directory if it is not empty, use the "-r" option of the "rm command".
 
-rmコマンドの解説をご覧ください。
+See the explanation of the rm command.
 
 <ul>
-  <li><a href="/blog/20191210081417.html">rmコマンド - ファイルを削除する</a></li>
-</ul>
+  <li> <a href="/blog/20191210081417.html"> rm command-delete file </a> </ li>
+</ ul>
 
-<h3>ヘルプを表示する --helpオプション</h3>
+<h3> Show help --help option </ h3>
 
-ヘルプを表示するには「--help」オプションを使用します。
+Use the "--help" option to get help.
 
 <pre>
 rmdir --help
-</pre>
+</ pre>
 
-ヘルプが表示されます。
+Help is displayed.
 
 <pre>
-Usage: rmdir [OPTION]... DIRECTORY...
-Remove the DIRECTORY(ies), if they are empty.
+Usage: rmdir [OPTION] ... DIRECTORY ...
+Remove the DIRECTORY (ies), if they are empty.
 
       --ignore-fail-on-non-empty
                   ignore each failure that is solely because a directory
                   is non-empty
-  -p, --parents   Remove DIRECTORY and its ancestors.  E.g., `rmdir -p a/b/c' is
-                  similar to `rmdir a/b/c a/b a'.
-  -v, --verbose   output a diagnostic for every directory processed
-      --help     display this help and exit
-      --version  output version information and exit
-</pre>
-
-
+  -p, --parents Remove DIRECTORY and its ancestors. E.g., `rmdir -p a / b / c'is
+                  similar to `rmdir a / b / c a / b a'.
+  -v, --verbose output a diagnostic for every directory processed
+      --help display this help and exit
+      --version output version information and exit
+</ pre>

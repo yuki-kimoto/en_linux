@@ -1,21 +1,21 @@
-<h2>bashの環境変数の設定</h2>
+<h2> Setting environment variables for bash </ h2>
 
-bashの環境変数を設定するには以下の環境変数の設定構文を使用します。
-
-<pre>
-export 環境変数名=値
-</pre>
-
-環境変数を設定するサンプルです。Perlの<a href="https://perlzemi.com/blog/20200617111016.html">PERL5LIB環境変数</a>を設定してみました。
+To set environment variables in bash, use the following environment variable setting syntax.
 
 <pre>
-export PERL5LIB=/foo/lib
-</pre>
+export environment variable name = value
+</ pre>
 
-<h3>exportの意味はなんですか?</h3>
+This is a sample to set environment variables. I set Perl's <a href="https://perlzemi.com/blog/20200617111016.html"> PERL5LIB environment variable </a>.
 
-exportを使うと、実行するプログラムに環境変数が引き継がれます。
+<pre>
+export PERL5LIB = / foo / lib
+</ pre>
 
-使わない場合は、環境変数はそのシェルの中だけで有効です。
+<h3> What does export mean? </ H3>
 
-一般的には、環境変数は、実行するプログラムが参照するので、exportをつけることが一般的です。
+If you use export, the environment variables will be inherited by the program to be executed.
+
+If not used, environment variables are valid only within that shell.
+
+Generally, environment variables are referenced by the program to be executed, so it is common to add export.

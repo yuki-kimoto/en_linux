@@ -1,57 +1,55 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </ span>
       </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <meta itemprop = "position" content = "1" />
+    </ li>
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </ span>
       </a>
-      <meta itemprop="position" content="2" />
-    </li>
+      <meta itemprop = "position" content = "2" />
+    </ li>
     <li>
       here
-    </li>
-  </ul>
-</div>
-<h2>chmodコマンド - パーミッションの変更</h2>
+    </ li>
+  </ ul>
+</ div>
+<h2> chmod command-change permissions </ h2>
 
-<b>chmodコマンド</b>を使うと、<a href="/blog/20200526082545.html">パーミッション</a>を変更できます。
-
-<pre>
-chmod パーミッションの表現 ファイル名
-</pre>
-
-パーミッションの表現には8進数と「+x」のような差分でパーミッションを追加できるものがあります。
-
-パーミッションを変更するサンプルです。
+You can change the <a href="/blog/20200526082545.html"> permissions </a> using the <b> chmod command </ b>.
 
 <pre>
-# 8進数で指定
+Representation of chmod permissions File name
+</ pre>
+
+Some representations of permissions allow you to add permissions by delta, such as octal and "+ x".
+
+This is a sample to change permissions.
+
+<pre>
+# Specify in octal
 chmod 644 foo.txt
 chmod 755 dir1
 
-# 実行権限を追加
-chmod +x myapp
-</pre>
+# Add execute permission
+chmod + x myapp
+</ pre>
 
-<h3>再帰的にパーミッションを変更する</h3>
+<h3> Recursively change permissions </ h3>
 
-再帰的にパーミッションを変更するには「-R」オプションがあります。
+There is a "-R" option to change permissions recursively.
 
-「-R」がありますが、ディレクトリ・通常ファイル・実行ファイルに設定したいパーミッションは、異なるので一括で変更すると、大変なことになります。
+There is "-R", but the permissions you want to set for directories, normal files, and executable files are different, so if you change them all at once, it will be difficult.
 
-また、特定の拡張子に対してだけ、実行権限をつけたいという場合もあります。
+You may also want to give execute permission only to a specific extension.
 
-このような場合は、<a href="/blog/20200317121556.html">find</a>コマンド・<a href="/blog/20200602093211.html">grep</a>コマンド・xargsコマンドを組み合わせて、対象のファイルだけに絞り込んでパーミッションを変更しましょう。
+In such a case, combine the <a href="/blog/20200317121556.html"> find </a> command, the <a href="/blog/20200602093211.html"> grep </a> command, and the xargs command. Let's narrow down to the target file and change the permissions.
 
-たとえばカレントディレクトリ以下にある「.pl」ファイルだけに実行権限をつけるという場合は以下のようにします。
+For example, if you want to give execute permission only to the ".pl" file under the current directory, do as follows.
 
 <pre>
-find * | grep -P '\.pl$' | xargs chmod +x
-</pre>
-
-
+find * | grep -P'\ .pl $'| xargs chmod + x
+</ pre>

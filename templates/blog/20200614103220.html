@@ -1,45 +1,43 @@
-<h2>xargsコマンド - 標準入力の行出力をコマンドライン引数に変換してプログラム実行</h2>
+<h2> xargs command --Converts standard input line output to command line arguments and runs the program </ h2>
 
-xargsコマンドは、標準入力の行出力をコマンドライン引数に変換してプログラムを実行してくれます。
-
-<pre>
-行出力するコマンド | xargs プログラム
-</pre>
-
-行出力するコマンドは、なんでも構いませんが、<a href="/blog/20200317121556.html">find</a>コマンドや、<a href="/blog/20200602093211.html">grep</a>コマンドで「-rl」を指定した場合が想定されます。
+The xargs command translates the line output of standard input into command line arguments and runs the program.
 
 <pre>
-find * | xargs プログラム
-grep -rl 'こんにちは' dir | xargs プログラム
-</pre>
+Command to output line | xargs program
+</ pre>
 
-一つの例として、findコマンドの出力を見てみましょう。templates/blogの中のファイル名を取得します。
-
-<pre>
-find templates/blog
-</pre>
-
-出力結果です。
+The command to output the line can be anything, but the <a href="/blog/20200317121556.html"> find </a> command and the <a href="/blog/20200602093211.html"> grep </a> > It is assumed that "-rl" is specified in the command.
 
 <pre>
-templates/blog/20190421171737.html
-templates/blog/20190103171737.html
-templates/blog/20190127171737.html
-templates/blog/20190212171737.html
-templates/blog/20200520082545.html
-templates/blog/20190309171737.html
-templates/blog/20191205081119.html
-templates/blog/20191218072611.html
-</pre>
+find * | xargs program
+grep -rl'Hello' dir | xargs program
+</ pre>
 
-このファイル名の一覧を、他のプログラムのコマンドライン引数に渡したいときが、xargsを使う場面です。
-
-たとえば、<a href="https://perlzemi.com/">Perl</a>を使って、置換を行う場合を考えてみましょう。
-
-上記のファイルに対して、「こんにちは」を「こんばんわ」に置換します。xargsコマンドを使って次のように書きます。
+As an example, let's take a look at the output of the find command. Get the file name in templates / blog.
 
 <pre>
-find templates/blog | xargs perl -pi -e 's/こんにちは/こんばんわ/g'
-</pre>
+find templates / blog
+</ pre>
 
+This is the output result.
 
+<pre>
+templates / blog / 20190421171737.html
+templates / blog / 20190103171737.html
+templates / blog / 20190127171737.html
+templates / blog / 20190212171737.html
+templates / blog / 20200520082545.html
+templates / blog / 20190309171737.html
+templates / blog / 20191205081119.html
+templates / blog / 20191218072611.html
+</ pre>
+
+When you want to pass this list of filenames to the command line arguments of another program, you need to use xargs.
+
+For example, consider using <a href="https://perlzemi.com/"> Perl </a> to make a replacement.
+
+For the above file, replace "Hello" with "Good evening". Write the following using the xargs command:
+
+<pre>
+find templates / blog | xargs perl -pi -e's / hello / good evening / g'
+</ pre>

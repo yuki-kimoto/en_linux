@@ -1,58 +1,58 @@
-<h2>TeraTermを使ったLinuxサーバーへのコマンド送信</h2>
+<h2> Sending commands to Linux server using TeraTerm </ h2>
 
-TeraTermを使ってLinuxサーバーへ接続してみましょう。Linuxサーバーへ接続するには、SSHクライアントと呼ばれる種類のアプリケーションを使いまが、TeraTermはSSHクライアントの一つです。
+Let's connect to a Linux server using TeraTerm. To connect to a Linux server, you use a kind of application called SSH client, but TeraTerm is one of the SSH clients.
 
-<h3>TeraTermのダウンロード</h3>
+<h3> Download TeraTerm </ h3>
 
-TeraTermをダウンロードします。
+Download TeraTerm.
 
-<a href="https://forest.watch.impress.co.jp/library/software/utf8teraterm/">TeraTermのダウンロード</a>
+<a href="https://forest.watch.impress.co.jp/library/software/utf8teraterm/"> Download TeraTerm </a>
 
-<h3>TeraTermのインストール</h3>
+<h3> Install TeraTerm </ h3>
 
-インストーラーを使って、TeraTermをインストールしましょう。
+Let's install TeraTerm using the installer.
 
-そのまま進めていっても大丈夫ですが、「ttl」をTeraTermマクロに関連付けるのチェックだけをつけておくと、TeraTermマクロを実行できます。
+It is okay to proceed as it is, but if you check only Associate "ttl" with TeraTerm macro, you can execute TeraTerm macro.
 
-<h3>SSH接続に必要な情報</h3>
+<h3> Information required for SSH connection </ h3>
 
-SSH接続に必要な情報は以下です。Linuxサーバーで、以下の情報を取得してください。ポート番号は特別に設定していなければ、22番です。SSHのポート番号は特別に設定していなければ、22番ですが、サーバーに侵入されないために、サーバーのSSHのポートを22番ポート以外に設定することを、非常に強く推奨します。
+The information required for SSH connection is as follows. Get the following information on your Linux server: The port number is 22 unless otherwise specified. The SSH port number is 22 unless otherwise specified, but it is highly recommended to set the server's SSH port to something other than port 22 to prevent intrusion into the server.
 
 <ul>
-  <li>IPアドレス(59.106.185.121など)</li>
-  <li>ポート番号(デフォルトは22番)</li>
-  <li>ユーザー名(myappなど)</li>
-  <li>パスワード</li>
-</ul>
+  <li> IP address (eg 59.106.185.121) </ li>
+  <li> Port number (default is 22) </ li>
+  <li> Username (such as myapp) </ li>
+  <li> password </ li>
+</ ul>
 
-<h3>TeraTermでの接続</h3>
+<h3> Connection with TeraTerm </ h3>
 
-TeraTermを開きます。ホストの部分にIPアドレスを入れます。
+Open TeraTerm. Enter the IP address in the host part.
 
-TCPポートは22、サービスは、SSHでバージョンが2になっているのを確認しましょう。
+Make sure the TCP port is 22 and the service is SSH with version 2.
 
-OKを押します。
+Press OK.
 
-ユーザー名とパスワードの入力を求められるので、入力します。プレインパスワードを使うが選択されていることを確認してください。
+You will be prompted to enter your user name and password, so enter them. Make sure Use Plain Password is selected.
 
-接続完了です。TeraTermの端末からリモートのLinixサーバーにSSHを使って、コマンドを送信することができます。
+The connection is complete. You can send commands from the TeraTerm terminal to the remote Linix server using SSH.
 
-コマンドを一つ実行してみましょう。ホームディレクトリにあるすべてのファイルを表示してみましょう。
+Let's execute one command. Let's see all the files in our home directory.
 
 <pre>
 ls -a
-</pre>
+</ pre>
 
-<h3>TeraTermマクロ</h3>
+<h3> TeraTerm macro </ h3>
 
-毎回接続を入力するのは面倒ですね。TeraTermには、TeraTermマクロと呼ばれる、接続処理などをスクリプトにして自動化できる仕組みが準備されています。
+It's a hassle to enter a connection every time. TeraTerm has a mechanism called TeraTerm macro that can automate connection processing etc. as a script.
 
-Linuxサーバーに接続するTeraTermマクロのサンプルです。名前は「開発サーバー.ttl」のようにしてください。
+This is a sample TeraTerm macro that connects to a Linux server. The name should be something like "development server.ttl".
 
 <pre>
-connect '59.106.185.121:22 /ssh /2 /auth=password /user=myapp /passwd=gudyfuie&A'
-</pre>
+connect '59.106.185.121: 22 / ssh / 2 / auth = password / user = myapp / passwd = gudyfuie & A'
+</ pre>
 
-Windowsの拡張子の表示設定は、拡張子を表示にしておきましょう。
+Let's set the extension display setting of Windows to display.
 
-ttlという拡張子に「Tera Term Macro Interpreter」を関連付けてください。プログラム名は「C:\Program Files (x86)\teraterm」の中にある「ttpmacro.exe」です。
+Associate "Tera Term Macro Interpreter" with the extension ttl. The program name is "ttpmacro.exe" in "C: \ Program Files (x86) \ teraterm".
