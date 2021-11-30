@@ -4,13 +4,13 @@
       <a itemprop="item" href="/">
         <span itemprop = "name"> Linux </span>
      </a>
-      <meta itemprop = "position" content = "1" />
+      <meta itemprop = "position" content = "1"/>
     </li>
     <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
         <span itemprop = "name"> Linux command </span>
      </a>
-      <meta itemprop = "position" content = "2" />
+      <meta itemprop = "position" content = "2"/>
     </li>
     <li>
       here
@@ -18,12 +18,12 @@
   </ul>
 </div>
 
-<h2> cd command-change current directory </h2>
+<h2> cd command - change current directory </h2>
 
 You can change the <a href="/blog/20191218072611.html"> current directory</a> using the cd command.
 
 <pre>
-cd directory name
+cd DirectoryName
 </pre>
 
 <h4> Specify the directory name with a relative path </h4>
@@ -42,10 +42,10 @@ This is called specifying the directory name with a relative path.
 
 You can also specify the directory name with an absolute path with the cd command.
 
-To change to the directory "/ usr / local / lib", execute the following command.
+To change to the directory "/usr/local/lib", execute the following command.
 
 <pre>
-cd / usr / local / lib
+cd /usr/local/lib
 </pre>
 
 Absolute paths are characterized by starting with "/". The cd command looks at the leading "/" to identify whether it is a relative path or an absolute path.
@@ -58,7 +58,7 @@ The current directory is the directory you are currently working on. Think of a 
 When you log in to Linux, the location called your home directory is your current directory.
 
 <pre>
-/ home / kimoto
+/home/kimoto
 </pre>
 
 You can use the pwd command to display the current directory.
@@ -73,19 +73,19 @@ If you find yourself in the wrong directory, you can check it with the pwd comma
 
 Remember the following directory names as special directory names.
 
-<h4> Current current directory-. </h4>
+<h4> Current current directory .</h4>
 
 "." Is a special directory name that points to the current current directory.
 
 <pre>
-cd.
+cd .
 </pre>
 
 This just changes the current directory to the current current directory, so nothing happens.
 
 But remember the meaning. The cd command has no particular meaning, but there are some situations where it makes sense.
 
-<h4> Parent directory --.. </h4>
+<h4> Parent directory .. </h4>
 
 ".." is a special directory name that points to the parent directory.
 
@@ -95,7 +95,7 @@ It is frequently used when you want to change the current directory and return t
 cd ..
 </pre>
 
-<h4> Home directory-~ </h4>
+<h4> Home directory ~ </h4>
 
 "~" Is a special directory name that points to your home directory.
 
@@ -106,7 +106,7 @@ cd ~
 If the user is "kimoto", the home directory will be expanded as follows.
 
 <pre>
-cd / home / kimoto
+cd /home/kimoto
 </pre>
 
 The special directories ".", "..", and "~" are not actually interpreted by the cd command, but by the shell, but they are frequently used by the cd command, so I will introduce them. Did.
@@ -119,18 +119,18 @@ This is a sample that changes the current directory to the home directory, creat
 # Change the current directory to your home directory
 cd ~
 
-Create #labo directory
+# Create labo directory
 mkdir labo
 
-Change current directory to #labo
+# Change current directory to labo
 cd labo
 
-Check the current current directory with the #pwd command
+# Check the current current directory with the pwd command
 pwd
 </pre>
 
 In the Perl seminar environment, it was displayed as follows.
 
 <pre>
-/ home / kimoto / labo
+/home/kimoto/labo
 </pre>
