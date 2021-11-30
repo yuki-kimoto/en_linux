@@ -1,23 +1,23 @@
-<h2> What is the owner user? </H2>
+<h2>User permissions</H2>
 
-The owner user is one of the attributes of a file stored in the inode and is information about which user owns the file.
+The user permission is one of the attributes of a file stored in the inode and is information about which user owns the file.
 
 The user who owns the file can perform read, write, and execute operations on the file as specified by the user's permissions.
 
-<h3> Confirm the owner user </h3>
+<h3> Confirm the user permission </h3>
 
 The "-l" option of the ls command shows the owner when you view the directory details.
 
 <pre>
-             #Owner user
+             # UserPermission
 -rw-r--r-- 1 kimoto kimoto 227 Aug 10 15:01 README
 -rw-r--r-- 1 kimoto kimoto 219 Aug 10 15:01 serve.pl
 drwxrwxr-x 5 kimoto kimoto 4096 Aug 10 15:01 templates
 -rwxrwxr-x 1 kimoto kimoto 219 Aug 10 15:01 mycmd
 </pre>
 
-In this example, the owner user is on the left side of the two "kimoto". On the right is the owner group.
+In this example, the user permission is on the left side of the two "kimoto". On the right is the owner group.
 
-Let's take a look at the permissions of the README. It is "-rw-r--r--". On the far left is a flag that indicates whether it is a directory. The next three "rw-" are the permissions of the owner user. The r and w flags allow the README owner user "kimoto" to "read" and "write" to the README.
+Let's take a look at the permissions of the README. It is "-rw-r--r--". On the far left is a flag that indicates whether it is a directory. The next three "rw-" are the permissions of the user permission. The r and w flags allow the README user permission "kimoto" to "read" and "write" to the README.
 
-The point is that the owner user is related to files and permissions.
+The point is that the user permission is related to files and permissions.

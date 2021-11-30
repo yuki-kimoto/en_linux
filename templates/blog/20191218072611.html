@@ -1,4 +1,4 @@
-<h2> What is the current directory? </H2>
+<h2>Current Directories</H2>
 
 The current directory is the directory you are currently working on. Current means "current" in English. A directory in Linux corresponds to a folder in Windows.
 
@@ -7,10 +7,10 @@ The current directory is the directory you are currently working on. Current mea
 Use the <a href="/blog/20191012191854.html"> cd command</a> to change the current directory.
 
 <pre>
-cd / home / kimoto / labo
+cd /home/kimoto/labo
 </pre>
 
-The directory "/ home / kimoto / labo" will be the current directory.
+The directory "/home/kimoto/labo" will be the current directory.
 
 <h3> Specify a relative path from the current directory </h3>
 
@@ -25,7 +25,7 @@ ls foo
 This actually has the same meaning as specified by <a href="/blog/20191217081903.html"> absolute path</a> as shown below.
 
 <pre>
-ls / home / kimoto / labo / foo
+ls /home/kimoto/labo/foo
 </pre>
 
 <h3> File name of the current directory </h3>
@@ -40,7 +40,7 @@ The current directory itself is represented by a special file name ".".
 If you give "." To ls and execute it as shown below, a list of files in the current directory will be displayed.
 
 <pre>
-ls.
+ls .
 </pre>
 
 <h3> Check the existence of the current directory </h3>
@@ -50,17 +50,17 @@ The current directory actually exists as the contents of the current directory a
 Let's check using the "-a" option of the <a href="/blog/20191126082723.html"> ls command</a>. This is a sample output result.
 
 <pre>
-drwxrwxr-x 6 kimoto kimoto 4096 Aug 14 17:51.
-drwxrwxr-x 40 kimoto kimoto 4096 Nov 9 10:08 ..
--rw-r--r-- 1 kimoto kimoto 1116 Aug 15 08:28 convert_markdown.pl
--rw-r--r-- 1 kimoto kimoto 162 Sep 11 08:42 giblog.conf
-drwxrwxr-x 8 kimoto kimoto 4096 Oct 12 19:52 .git
--rw-r--r-- 1 kimoto kimoto 8 Aug 10 15:01 .gitignore
-drwxrwxr-x 3 kimoto kimoto 4096 Aug 10 15:01 lib
-drwxrwxr-x 7 kimoto kimoto 4096 Aug 10 15:04 public
--rw-r--r-- 1 kimoto kimoto 227 Aug 10 15:01 README
--rw-r--r-- 1 kimoto kimoto 219 Aug 10 15:01 serve.pl
-drwxrwxr-x 5 kimoto kimoto 4096 Aug 10 15:01 templates
+drwxrwxr-x 6  kimoto kimoto 4096 Aug 14 17:51.
+drwxrwxr-x 40 kimoto kimoto 4096 Nov 9  10:08 ..
+-rw-r--r-- 1  kimoto kimoto 1116 Aug 15 08:28 convert_markdown.pl
+-rw-r--r-- 1  kimoto kimoto 162  Sep 11 08:42 giblog.conf
+drwxrwxr-x 8  kimoto kimoto 4096 Oct 12 19:52 .git
+-rw-r--r-- 1  kimoto kimoto 8    Aug 10 15:01 .gitignore
+drwxrwxr-x 3  kimoto kimoto 4096 Aug 10 15:01 lib
+drwxrwxr-x 7  kimoto kimoto 4096 Aug 10 15:04 public
+-rw-r--r-- 1  kimoto kimoto 227  Aug 10 15:01 README
+-rw-r--r-- 1  kimoto kimoto 219  Aug 10 15:01 serve.pl
+drwxrwxr-x 5  kimoto kimoto 4096 Aug 10 15:01 templates
 </pre>
 
 "." Is displayed.

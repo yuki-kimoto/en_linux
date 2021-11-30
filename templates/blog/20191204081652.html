@@ -17,12 +17,12 @@
     </li>
   </ul>
 </div>
-<h2> mv command-rename file </h2>
+<h2> mv Command - Rename Files </h2>
 
 You can change the file name using the mv command. The original file name is changed to the new file name. The name of mv comes from move.
 
 <pre>
-mv original file name new file name
+mv OriginalFileName NewFileName
 </pre>
 
 This is a sample to change the file name with the mv command. The file name foo.txt is renamed to bar.txt.
@@ -36,7 +36,7 @@ mv foo.txt bar.txt
 The mv command can also be used to rename a directory. On Linux, file names and directory names are treated the same. A directory is a folder in Windows.
 
 <pre>
-mv original directory name new directory name
+mv OriginalDirectoryName NewDirectoryName
 </pre>
 
 This is a sample to change the directory name. The directory name dir1 is changed to the directory name dir2.
@@ -52,7 +52,7 @@ The mv command can also be used to move the location of a file.
 Let's move foo.txt in the directory called labo in the home directory to the directory called test in the home directory. "~" Represents the path of your home directory.
 
 <pre>
-mv ~ / labo / foo.txt ~ /test/foo.txt
+mv ~/labo/foo.txt ~/test/foo.txt
 </pre>
 
 As mentioned above, the mv command is also used when moving files.
@@ -60,21 +60,21 @@ As mentioned above, the mv command is also used when moving files.
 If you want to move the file, you can omit only the last file name. Notice the trailing slash.
 
 <pre>
-#Syntack sugar of the above operation
-mv ~ / labo / foo.txt ~ / test /
+# Syntack sugar of the above operation
+mv ~/labo/foo.txt ~/test/
 </pre>
 
 You can do the same if you want to move the directory location.
 
 <pre>
-mv ~ / labo / dir1 ~ / test / dir1
+mv ~/labo/dir1 ~/test/dir1
 </pre>
 
 or
 
 <pre>
-#Syntack sugar of the above operation
-mv ~ / labo / dir1 ~ / test /
+# Syntack sugar of the above operation
+mv ~/labo/dir1 ~/test/
 </pre>
 
 <h3> Show help --help option </h3>

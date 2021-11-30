@@ -17,12 +17,12 @@
     </li>
   </ul>
 </div>
-<h2> diff command-check file diffs </h2>
+<h2> diff command - Check File Diffs </h2>
 
 You can use the diff command to see the differences in the files.
 
 <pre>
-git diff file 1 file 2
+git diff File1 File2
 </pre>
 
 This is a sample of the output result of diff.
@@ -30,11 +30,11 @@ This is a sample of the output result of diff.
 <pre>
   ServerName system.online-fudousan.jp
 
--<Directory / var / www>
---Options + ExecCGI
---</Directory>
-――――
+-  <Directory /var/www>
+-    Options +ExecCGI
+-  </Directory>
+-
    RewriteEngine On
-   RewriteCond% {HTTP_HOST}! ^ \ Qsystem.online-fudousan.jp \ E
-   RewriteRule (. +) Https://system.online-fudousan.jp $ 1 [R = 301, L]
+   RewriteCond %{HTTP_HOST} !^\Qsystem.online-fudousan.jp\E
+   RewriteRule (.+) https://system.online-fudousan.jp$1 [R=301,L]
 </pre>
