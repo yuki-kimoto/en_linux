@@ -1,9 +1,9 @@
-<h2> grep --text search </h2>
+<h2> grep - Text Search </h2>
 
 You can search for text using the <b> grep command </b>.
 
 <pre>
-grep text file name
+grep Text FileName
 </pre>
 
 This is a sample of grep.
@@ -15,7 +15,7 @@ grep Foo foo.txt
 You can specify multiple file names.
 
 <pre>
-grep text file name 1 file name 2
+grep Text FileName1 FileName2
 </pre>
 
 <h4> Search directory recursively </h4>
@@ -23,7 +23,7 @@ grep text file name 1 file name 2
 There is a "-r" option that allows you to search directories recursively. All files, including subdirectories, will be searched.
 
 <pre>
-grep -r text directory name
+grep -r Text DirectoryName
 </pre>
 
 <h4> Case insensitive </h4>
@@ -37,8 +37,8 @@ grep -i foo filename
 
 <h4> Use Perl regular expressions </h4>
 
-This is an experimental feature of the Linux grep command, but with the "-P" option, you can use <a href="https://perlzemi.com/blog/20100827127859.html"> Perl regular expressions</a> with grep. increase.
+This is an experimental feature of the Linux grep command, but with the "-P" option, you can use <a href="https://en.perlzemi.com/blog/20100827127859.html"> Perl regular expressions</a> with grep. increase.
 
 <pre>
-grep -P'^ (foo | bar) $'filename
+grep -P '^(foo|bar)$' filename
 </pre>
