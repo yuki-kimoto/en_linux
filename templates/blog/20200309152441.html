@@ -3,7 +3,7 @@
 bash is a standard Linux shell. You can use bash to execute <a href="/blog/20200211081227.html"> Linux commands</a>.
 
 <pre>
-Execute Linux command with # bash
+# Execute Linux command with bash
 ls
 </pre>
 
@@ -18,8 +18,8 @@ env
 When combined with grep, you can retrieve only the environment variables you need.
 
 <pre>
-Get only those that contain #MOJO
-env | grep MOJO
+# Get only those that contain PATH
+env | grep PATH
 </pre>
 
 <h3> Set environment variables </h3>
@@ -27,13 +27,13 @@ env | grep MOJO
 Use the export command to set environment variables.
 
 <pre>
-export environment variable name = value of environment variable
+export EnvironmentVariableName=EnvironmentVariableValue
 </pre>
 
-Below is the <a href="https://en.webapp.perlzemi.com/"> Mojolicious</a> development server <a href="https://perlzemi.com/blog/20120406133367.html"> This is a sample to change the port number with morbo</a>.
+Examples:
 
 <pre>
-export MOJO_LISTEN = http: // *: 3050
+export LANG=en_US.utf8
 </pre>
 
 <h3> bash configuration file </h3>
@@ -41,7 +41,7 @@ export MOJO_LISTEN = http: // *: 3050
 The bash configuration file is ".bashrc" in your home directory.
 
 <pre>
-~ / .bashrc
+~/.bashrc
 </pre>
 
 There is also a special config file called ".bash_profile", but use ".bashrc" for normal configs.
@@ -52,51 +52,32 @@ If you write the above environment variable settings in ".bashrc", they can be s
 
 Let's create a bash shell script. This is useful when executing frequently used Linux commands.
 
-Suppose you save the following script as "setup.sh". This is also a sample to install all dependent modules with <a href="https://perlzemi.com/blog/20101027127859.html"> cpanm and cpanfile</a>.
+Suppose you save the following script as "myecho".
 
 <pre>
-#! / bin / sh
+#!/bin/bash
 
-cpanm --installdeps.
+echo 'Hello'
 </pre>
 
 Save this script and change the permissions to 755 with the chmod command so you can run it
 
 <pre>
-chmod 755 setup.sh
+chmod 755 myecho
 </pre>
 
 execution
 
 <pre>
-./setup.sh
+./myecho
 </pre>
 
 <h4> Shebang </h4>
 
-Shebang is "#! / Bin / sh". On Linux sh is aliased to bash.
+Shebang is "#!/bin/bash".
 
 <h3> What kind of shell scripts are there? </H3>
 
 Bash is the standard shell script on Linux, but there are other shell scripts such as csh, ksh, and zsh.
 
 Shell scripts are like dialects, and each Linux OS has a different standard shell.
-
-<h3> How should I use shell scripts and Perl properly? </H3>
-
-A shell script is a mechanism that automates the shell, and Linux commands can be used as they are.
-
-It's easy because you can write the familiar Linux commands as they are.
-
-On the other hand, when using it as a general-purpose programming language, the larger the program, the more difficult it becomes.
-
-Isn't this program better maintainable and faster to write in Perl !?
-
-If you feel that way, it's time to give Perl a try.
-
-For those who maintain it later, don't forget the following description.
-
-<pre>
-use strict;
-use warnings;
-</pre>

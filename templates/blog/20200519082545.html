@@ -17,12 +17,12 @@
     </li>
   </ul>
 </div>
-<h2> chmod command-change permissions </h2>
+<h2> chmod Command - Change Permissions </h2>
 
-You can change the <a href="/blog/20200526082545.html"> permissions</a> using the <b> chmod command </b>.
+You can change the <a href="/blog/20190406171737.html"> permissions</a> using the <b> chmod command </b>.
 
 <pre>
-Representation of chmod permissions File name
+chmod Permission FileName
 </pre>
 
 Some representations of permissions allow you to add permissions by delta, such as octal and "+ x".
@@ -35,7 +35,7 @@ chmod 644 foo.txt
 chmod 755 dir1
 
 # Add execute permission
-chmod + x myapp
+chmod +x myapp
 </pre>
 
 <h3> Recursively change permissions </h3>
@@ -51,5 +51,5 @@ In such a case, combine the <a href="/blog/20200317121556.html"> find</a> comman
 For example, if you want to give execute permission only to the ".pl" file under the current directory, do as follows.
 
 <pre>
-find * | grep -P'\ .pl $'| xargs chmod + x
+find * | grep -P '\.pl$' | xargs chmod +x
 </pre>

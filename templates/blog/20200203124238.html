@@ -1,54 +1,52 @@
-<div class="bread">
-  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<div class = "bread">
+  <ul itemscope itemtype = "http://schema.org/BreadcrumbList">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/">
-        <span itemprop="name">Linux</span>
+        <span itemprop = "name"> Linux </span>
      </a>
-      <meta itemprop="position" content="1" />
+      <meta itemprop = "position" content = "1" />
     </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
       <a itemprop="item" href="/blog/20200211081227.html">
-        <span itemprop="name">Linuxコマンド</span>
+        <span itemprop = "name"> Linux command </span>
      </a>
-      <meta itemprop="position" content="2" />
+      <meta itemprop = "position" content = "2" />
     </li>
     <li>
       here
     </li>
   </ul>
 </div>
-<h2>tailコマンド - ファイルの末尾を出力</h2>
+<h2> tail command - Prints the End of the File </h2>
 
-tailコマンドを使用するとファイルの末尾の部分を出力することができます。ファイルの末尾だけを確認したい場合に使います。
+You can use the tail command to print the end of the file. Use this when you want to check only the end of the file.
 
 <pre>
-tail ファイル名
+tail FileName
 </pre>
 
-tailコマンドは、ファイルの全体を読み込むわけではないので、高速です。
+The tail command is fast because it doesn't read the entire file.
 
-<h3>tailコマンドのサンプル</h3>
+<h3> Tail command sample </h3>
 
-foo.txtの末尾を表示するtailコマンドのサンプルです。
+This is a sample tail command that displays the end of foo.txt.
 
 <pre>
 tail foo.txt
 </pre>
 
-<h3>末尾に表示する行数を指定する</h3>
+<h3> Specify the number of lines to display at the end </h3>
 
-ハイフンの後ろに行数を指定することで、末尾に表示する行数を指定できます。以下の例は、末尾の20行を表示します。
+You can specify the number of lines to display at the end by specifying the number of lines after the hyphen. The following example displays the last 20 lines.
 
 <pre>
-tail -20 ファイル名
+tail -20 filename
 </pre>
 
-<h3>ファイルの末尾を出力し続ける</h3>
+<h3> Continue to output the end of the file </h3>
 
-ファイルに更新があった場合に、ファイルの末尾を出力し続けるには「-f」オプションを使用します。
+Use the "-f" option to continue printing the end of the file if the file has been updated.
 
 <pre>
 tail -f foo.txt
 </pre>
-
-

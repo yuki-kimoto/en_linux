@@ -18,24 +18,24 @@
   </ul>
 </div>
 
-<h2> find command-recursive search of directories </h2>
+<h2> find Cmmand - Recursive Search of Directories </h2>
 
 You can use the find command to perform a recursive search for a directory.
 
 <pre>
-find directory name
+find DirectoryName
 </pre>
 
-This is a sample to search under "/ usr / local / lib".
+This is a sample to search under "/usr/local/lib".
 
 <pre>
-find / usr / local / lib
+find /usr/local/lib
 </pre>
 
 This is a sample output result.
 
 <pre>
-/ usr / local / lib
+/usr/local/lib
 /usr/local/lib/liblept.so.3.0.0
 /usr/local/lib/liblept.so.3
 /usr/local/lib/liblept.so
@@ -46,7 +46,7 @@ This is a sample output result.
 /usr/local/lib/libtesseract.so
 /usr/local/lib/libtesseract.la
 /usr/local/lib/libtesseract.a
-/ usr / local / lib / pkgconfig
+/usr/local/lib/pkgconfig
 /usr/local/lib/pkgconfig/tesseract.pc
 </pre>
 
@@ -55,19 +55,19 @@ This is a sample output result.
 When combined with the <a href="/blog/20200602093211.html"> grep</a> command, you can narrow down the content of the find command.
 
 <pre>
-find / usr / local / lib | grep pkg
+find /usr/local/lib | grep pkg
 </pre>
 
 This is a sample output result.
 
 <pre>
-/ usr / local / lib / pkgconfig
+/usr/local/lib/pkgconfig
 /usr/local/lib/pkgconfig/tesseract.pc
 </pre>
 
 <h3> Specify the current directory that does not contain hidden files </h3>
 
-If you currently have a hidden directory such as ".git" used by <a href="https://git.perlclub.net/"> Git</a> in your directory and you don't want to include it, you can use the wildcard "*". Is convenient to use. This applies to files other than hidden files in the current directory.
+If you currently have a hidden directory such as ".git" used by <a href="https://en.git.perlzemi.com/"> Git</a> in your directory and you don't want to include it, you can use the wildcard "*". Is convenient to use. This applies to files other than hidden files in the current directory.
 
 <pre>
 find *
