@@ -18,18 +18,18 @@
   </ul>
 </div>
 
-<h2> ssh command --connect to SSH server </h2>
+<h2> ssh Command - Connect to SSH Server </h2>
 
-You can use the ssh command to connect to an SSH server and execute commands using the SSH protocol.
+You can use the <b>ssh</b> command to connect to an SSH server and execute commands using the SSH protocol.
 
 <pre>
-ssh connection destination
+ssh ConnectInfo
 </pre>
 
 Describe the connection destination as follows. If you omit the user name, it will be the same as the local user.
 
 <pre>
-Username @hostname
+UserName@HostName
 </pre>
 
 This is a sample to connect with ssh.
@@ -51,12 +51,12 @@ ssh -p 55555 kimoto@59.105.185.193
 The default private key used by the ssh command is:
 
 <pre>
-~ / .ssh / id_rsa
+~/.ssh/id_rsa
 </pre>
 
 <h4> Specify the private key file </h4>
 
-You can specify the private key file with the "-i" option for the private key. In the case of a relative path, it will be the path from "~ / .ssh".
+You can specify the private key file with the "-i" option for the private key. In the case of a relative path, it will be the path from "~/.ssh".
 
 <pre>
 ssh -i id_rsa_example kimoto@59.105.185.193
@@ -65,19 +65,19 @@ ssh -i /path/id_rsa_example kimoto@59.105.185.193
 
 <h4> Setting to use by specifying the private key file when SSH connection to a specific domain </h4>
 
-You can use the configuration file "~ / .ssh / config" to specify the private key file for SSH connection to a specific domain.
+You can use the configuration file "~/.ssh/config" to specify the private key file for SSH connection to a specific domain.
 
-This is a sample setting to use the private key created when connecting to Github via SSH. Add to "~ / .ssh / config".
+This is a sample setting to use the private key created when connecting to Github via SSH. Add to "~/.ssh/config".
 
 <pre>
 Host github github.com
   HostName github.com
-  IdentityFile ~ / .ssh / id_rsa_github
+  IdentityFile ~/.ssh/id_rsa_github
   User git
 </pre>
 
 Let's also set the permission to 600.
 
 <pre>
-chmod 600 ~ / .ssh / config
+chmod 600 ~/.ssh/config
 </pre>
